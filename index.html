@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annuaire-Addictologie : trouver un centre, une clinique ou une association près de chez vous</title>
+<meta name="description" content="Annuaire gratuit des CSAPA, CAARUD, hôpitaux et associations d'addictologie en Île-de-France. Filtrez par ville, par mode de prise en charge (ambulatoire ou hospitalisation) et selon que la demande concerne vous-même ou un proche.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.votre-domaine.fr/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Annuaire-Addictologie : trouver de l'aide près de chez vous">
+<meta property="og:description" content="Annuaire gratuit et filtrable des centres, cliniques et associations d'addictologie en Île-de-France, pour vous ou pour un proche.">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un CSAPA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un CSAPA (Centre de Soins, d'Accompagnement et de Prévention en Addictologie) est une structure médico-sociale qui accueille gratuitement et anonymement toute personne concernée par une addiction (alcool, drogues, médicaments, jeux, écrans...) ainsi que son entourage, en consultation externe (ambulatoire)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La prise en charge en addictologie est-elle gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les CSAPA, CAARUD et lignes d'écoute nationales sont gratuits et anonymes. Une hospitalisation en établissement public est prise en charge par l'Assurance Maladie ; des frais peuvent exister en clinique privée, à vérifier au cas par cas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il une ordonnance pour consulter en CSAPA ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. L'accueil en CSAPA se fait sans ordonnance, sans rendez-vous obligatoire selon les structures, et sans avance de frais."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#EEF2EC;
+    --paper:#FAFBF8;
+    --ink:#1E2E28;
+    --ink-soft:#4A5B53;
+    --pine:#1F3A35;
+    --pine-dark:#152824;
+    --gold:#AD7F35;
+    --gold-soft:#EFE2C8;
+    --line:#D9E0D6;
+    --danger-bg:#FBEFE9;
+    --danger-ink:#7A3B1E;
+    --radius:4px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    color:var(--pine-dark);
+    line-height:1.15;
+    margin:0 0 .5em;
+    font-weight:500;
+  }
+  a{color:var(--pine);}
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 24px;}
+
+  /* HEADER */
+  header.site{
+    background:var(--pine);
+    color:#EAF0ED;
+    padding:14px 0;
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:baseline; gap:10px;}
+  .brand strong{font-family:'Fraunces', serif; font-size:1.15rem; color:#fff; font-weight:500;}
+  .brand span{font-size:.82rem; color:#B9CCC4;}
+  nav.site-links{display:flex; gap:20px; font-size:.9rem;}
+  nav.site-links a{color:#D7E5DF; text-decoration:none;}
+  nav.site-links a:hover{color:#fff; text-decoration:underline;}
+
+  /* URGENCE BANNER */
+  .urgence{
+    background:var(--danger-bg);
+    border-bottom:1px solid #E7C9B4;
+    color:var(--danger-ink);
+    font-size:.88rem;
+    padding:9px 0;
+  }
+  .urgence .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .urgence strong{font-weight:600;}
+
+  /* HERO */
+  .hero{padding:52px 0 28px;}
+  .hero h1{font-size:2.15rem; max-width:16ch;}
+  .hero p.lede{color:var(--ink-soft); max-width:56ch; font-size:1.05rem; margin-top:14px;}
+
+  /* FILTER PANEL */
+  .panel{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    margin-top:28px;
+  }
+  .panel-row{margin-bottom:20px;}
+  .panel-row:last-child{margin-bottom:0;}
+  .panel-row > .label{
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    display:block;
+  }
+  .chip-group{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:.88rem;
+    cursor:pointer;
+    font-family:inherit;
+    transition:background .15s,border-color .15s,color .15s;
+  }
+  .chip:hover{border-color:var(--pine);}
+  .chip[aria-pressed="true"]{
+    background:var(--pine);
+    border-color:var(--pine);
+    color:#fff;
+  }
+  .search-row{display:flex; gap:10px; flex-wrap:wrap;}
+  #cityInput{
+    flex:1 1 240px;
+    padding:10px 14px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    font-size:.95rem;
+    font-family:inherit;
+    background:#fff;
+  }
+  .reset-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    padding:10px 16px;
+    border-radius:var(--radius);
+    font-size:.88rem;
+    cursor:pointer;
+    color:var(--ink-soft);
+  }
+  .reset-btn:hover{border-color:var(--pine); color:var(--pine);}
+
+  /* RESULTS */
+  .results-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin:34px 0 14px; flex-wrap:wrap; gap:8px;
+  }
+  .results-head h2{font-size:1.15rem; margin:0;}
+  #resultCount{font-size:.85rem; color:var(--ink-soft);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 20px;
+  }
+  .card h3{font-size:1.02rem; margin-bottom:6px;}
+  .badges{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+  .badge{
+    font-size:.72rem;
+    padding:3px 9px;
+    border-radius:20px;
+    font-weight:600;
+  }
+  .badge.mode-ambu{background:var(--gold-soft); color:#7A5A1E;}
+  .badge.mode-hosp{background:#E3E9F2; color:#2E4569;}
+  .badge.pub-moi{background:#E4EEE6; color:var(--pine-dark);}
+  .badge.pub-proche{background:#F0E6EE; color:#6B2E58;}
+  .card .addr{font-size:.88rem; color:var(--ink-soft); margin:6px 0;}
+  .card .desc{font-size:.88rem; margin:8px 0 10px;}
+  .card .meta-line{font-size:.85rem; display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
+  .card .meta-line a{text-decoration:none; font-weight:600;}
+  .card .verified{font-size:.72rem; color:#8A9690; margin-top:10px;}
+  .no-results{
+    grid-column:1/-1;
+    text-align:center;
+    padding:40px 20px;
+    color:var(--ink-soft);
+    border:1px dashed var(--line);
+    border-radius:var(--radius);
+  }
+
+  /* GLOSSAIRE */
+  section.glossaire{margin-top:64px;}
+  .glossaire-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 32px; margin-top:20px;}
+  @media (max-width:720px){ .glossaire-grid{grid-template-columns:1fr;} }
+  .terme dt{font-family:'Fraunces', serif; font-weight:500; color:var(--pine-dark); font-size:1rem; margin-bottom:4px;}
+  .terme dd{margin:0; font-size:.92rem; color:var(--ink-soft);}
+  .terme{margin-bottom:18px;}
+
+  /* FAQ */
+  section.faq{margin-top:56px;}
+  details.faq-item{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+  details.faq-item summary{
+    cursor:pointer;
+    font-weight:600;
+    color:var(--pine-dark);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none;}
+  details.faq-item summary::after{content:"+"; font-family:'Fraunces',serif; font-size:1.3rem; color:var(--gold);}
+  details.faq-item[open] summary::after{content:"–";}
+  details.faq-item p{margin:10px 0 0; color:var(--ink-soft); font-size:.92rem; max-width:66ch;}
+
+  section.limites{
+    margin-top:56px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    font-size:.88rem;
+    color:var(--ink-soft);
+  }
+  section.limites h2{font-size:1rem;}
+
+  footer.site{
+    margin-top:70px;
+    border-top:1px solid var(--line);
+    padding:30px 0 50px;
+    font-size:.82rem;
+    color:var(--ink-soft);
+  }
+  footer.site .wrap{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+  footer.site a{color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<div class="urgence">
+  <div class="wrap">
+    <strong>Urgence vitale : 15 (SAMU) ou 112.</strong>
+    <span>Détresse psychologique : 3114 (numéro national de prévention du suicide, gratuit, 24h/24).</span>
+    <span>Besoin d'écouter/orienter tout de suite : Drogues Info Service 0&nbsp;800&nbsp;23&nbsp;13&nbsp;13 (gratuit, anonyme, 8h–2h, 7j/7).</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <strong>Annuaire-Addictologie</strong>
+      <span>Glossaire &amp; annuaire addictologie</span>
+    </div>
+    <nav class="site-links">
+      <a href="#recherche">Trouver un centre</a>
+      <a href="#glossaire">Glossaire</a>
+      <a href="#faq">Questions fréquentes</a>
+      <a href="#" id="espaceLink" style="display:none;">Mon espace</a>
+      <button class="reset-btn" type="button" id="loginBtn" style="padding:7px 14px;">Se connecter</button>
+      <span id="userChip" style="display:none; align-items:center; gap:8px; color:#EAF0ED; font-size:.88rem;">
+        <span id="userEmail"></span>
+        <button class="reset-btn" type="button" id="logoutBtn" style="padding:5px 12px;">Se déconnecter</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(21,40,36,.55); z-index:100; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:var(--paper); border-radius:var(--radius); padding:28px; max-width:380px; width:100%; position:relative;">
+    <button id="closeModal" type="button" style="position:absolute; top:14px; right:16px; background:none; border:none; font-size:1.3rem; cursor:pointer; color:var(--ink-soft);">×</button>
+    <h2 id="modalTitle" style="font-size:1.2rem;">Se connecter</h2>
+    <div id="firebaseWarning" style="display:none; background:var(--danger-bg); color:var(--danger-ink); font-size:.82rem; padding:10px 12px; border-radius:var(--radius); margin-bottom:14px;">
+      La connexion n'est pas encore configurée sur ce site (Firebase). Voir le guide de mise en place.
+    </div>
+    <button id="googleBtn" type="button" style="width:100%; padding:11px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; font-family:inherit; font-size:.92rem; cursor:pointer; margin-bottom:14px;">Continuer avec Google</button>
+    <div style="text-align:center; color:var(--ink-soft); font-size:.8rem; margin-bottom:14px;">— ou avec un e-mail —</div>
+    <input type="email" id="authEmail" placeholder="Adresse e-mail" style="width:100%; padding:10px 14px; margin-bottom:10px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+    <input type="password" id="authPassword" placeholder="Mot de passe" style="width:100%; padding:10px 14px; margin-bottom:10px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+    <button id="emailAuthBtn" type="button" class="reset-btn" style="width:100%; padding:11px; color:var(--pine); border-color:var(--pine); margin-bottom:10px;">Se connecter</button>
+    <p style="font-size:.85rem; text-align:center; margin:0;">
+      <a href="#" id="toggleAuthMode">Pas encore de compte ? Créer un compte</a>
+    </p>
+    <p id="authError" style="color:var(--danger-ink); font-size:.82rem; margin-top:10px; display:none;"></p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero" id="recherche">
+    <h1>Trouver un centre, une clinique ou une association d'addictologie en Île-de-France</h1>
+    <p class="lede">Un annuaire gratuit, classé par mode de prise en charge, par public concerné et par ville, pour que vous n'ayez pas à chercher seul·e au moment où c'est le plus difficile. Cette sélection couvre aujourd'hui Paris, les Hauts-de-Seine, les Yvelines, l'Essonne, la Seine-Saint-Denis, le Val-d'Oise et la Seine-et-Marne, et s'étend progressivement au reste de la France.</p>
+
+    <div class="panel">
+      <div class="panel-row">
+        <span class="label">Type de prise en charge</span>
+        <div class="chip-group" id="modeFilters">
+          <button class="chip" type="button" aria-pressed="true" data-mode="tous">Toutes</button>
+          <button class="chip" type="button" aria-pressed="false" data-mode="ambulatoire">À domicile / suivi externe</button>
+          <button class="chip" type="button" aria-pressed="false" data-mode="hospitalisation">Hospitalisation / internement</button>
+        </div>
+      </div>
+
+      <div class="panel-row">
+        <span class="label">La demande concerne</span>
+        <div class="chip-group" id="publicFilters">
+          <button class="chip" type="button" aria-pressed="false" data-public="moi">Moi-même</button>
+          <button class="chip" type="button" aria-pressed="false" data-public="proche">Un proche</button>
+        </div>
+      </div>
+
+      <div class="panel-row">
+        <span class="label">Je me situe</span>
+        <div class="search-row">
+          <input type="text" id="cityInput" list="villes" placeholder="Votre ville ou votre département (ex : Nanterre, 78, Paris 17e)">
+          <datalist id="villes"></datalist>
+          <button class="reset-btn" type="button" id="resetBtn">Réinitialiser les filtres</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-head">
+      <h2>Structures correspondant à votre recherche</h2>
+      <span id="resultCount"></span>
+    </div>
+
+    <div class="grid" id="resultsGrid"></div>
+  </section>
+
+  <section id="monEspace" style="display:none; margin-top:56px;">
+    <h2>Mon espace</h2>
+    <div class="chip-group" style="margin-bottom:24px;">
+      <button class="chip" type="button" aria-pressed="true" data-tab="profil">Mon profil</button>
+      <button class="chip" type="button" aria-pressed="false" data-tab="rdv">Mes RDV</button>
+      <button class="chip" type="button" aria-pressed="false" data-tab="docs">Mes documents</button>
+    </div>
+
+    <div id="tabProfil" class="panel">
+      <p style="color:var(--ink-soft); font-size:.9rem; margin-top:0;">Toutes ces informations sont facultatives et ne sont visibles que par vous.</p>
+      <div class="panel-row">
+        <span class="label">Prénom</span>
+        <input type="text" id="profPrenom" style="width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+      </div>
+      <div class="panel-row">
+        <span class="label">Ville</span>
+        <input type="text" id="profVille" style="width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+      </div>
+      <div class="panel-row">
+        <span class="label">Téléphone</span>
+        <input type="tel" id="profTel" style="width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+      </div>
+      <div class="panel-row">
+        <span class="label">Notes libres</span>
+        <textarea id="profNotes" rows="3" style="width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;"></textarea>
+      </div>
+      <button class="chip" type="button" id="saveProfilBtn" aria-pressed="true" style="width:auto;">Enregistrer mon profil</button>
+      <span id="profilSaved" style="font-size:.85rem; color:var(--pine); margin-left:10px; display:none;">Enregistré ✓</span>
+    </div>
+
+    <div id="tabRdv" class="panel" style="display:none;">
+      <div class="panel-row">
+        <span class="label">Ajouter un rendez-vous</span>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <input type="text" id="rdvStructure" placeholder="Nom de la structure" style="flex:2 1 200px; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+          <input type="date" id="rdvDate" style="flex:1 1 140px; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+          <input type="time" id="rdvHeure" style="flex:1 1 110px; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+        </div>
+        <input type="text" id="rdvNote" placeholder="Note (facultatif)" style="width:100%; margin-top:10px; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-family:inherit;">
+        <button class="chip" type="button" id="addRdvBtn" aria-pressed="true" style="width:auto; margin-top:10px;">Ajouter ce RDV</button>
+      </div>
+      <h3 style="font-size:1rem; margin-top:28px;">À venir</h3>
+      <div id="rdvAVenir"></div>
+      <h3 style="font-size:1rem; margin-top:28px;">Passés</h3>
+      <div id="rdvPasses"></div>
+    </div>
+
+    <div id="tabDocs" class="panel" style="display:none;">
+      <div class="panel-row">
+        <span class="label">Ajouter un document</span>
+        <input type="file" id="docFile" style="font-family:inherit;">
+        <button class="chip" type="button" id="addDocBtn" aria-pressed="true" style="width:auto; margin-top:10px;">Téléverser</button>
+        <span id="docUploadStatus" style="font-size:.85rem; color:var(--ink-soft); margin-left:8px;"></span>
+      </div>
+      <div id="docsList" style="margin-top:20px;"></div>
+    </div>
+  </section>
+
+  <section class="glossaire" id="glossaire">
+    <h2>Glossaire : comprendre les mots de l'addictologie</h2>
+    <p style="color:var(--ink-soft); max-width:66ch;">Les sigles utilisés dans le secteur médico-social ne sont pas toujours clairs quand on découvre le sujet. Voici les principaux termes que vous croiserez en cherchant de l'aide.</p>
+    <dl class="glossaire-grid">
+      <div class="terme">
+        <dt>CSAPA</dt>
+        <dd>Centre de Soins, d'Accompagnement et de Prévention en Addictologie. Accueil, évaluation, soins et suivi ambulatoire (sans hébergement), gratuit et anonyme, pour la personne concernée et pour son entourage.</dd>
+      </div>
+      <div class="terme">
+        <dt>CAARUD</dt>
+        <dd>Centre d'Accueil et d'Accompagnement à la Réduction des risques pour Usagers de Drogues. Accueil à bas seuil d'exigence, sans obligation d'engager un soin, pour les personnes les plus exposées.</dd>
+      </div>
+      <div class="terme">
+        <dt>Ambulatoire</dt>
+        <dd>Prise en charge sans hébergement : la personne vit chez elle et se rend à des consultations, correspond au filtre « à domicile » de cet annuaire.</dd>
+      </div>
+      <div class="terme">
+        <dt>Hospitalisation / sevrage résidentiel</dt>
+        <dd>Séjour dans un établissement de santé, pour un sevrage encadré médicalement ou une phase de soins intensive, avec hébergement.</dd>
+      </div>
+      <div class="terme">
+        <dt>CJC</dt>
+        <dd>Consultation Jeunes Consommateurs. Rendez-vous gratuits et anonymes pour les 12–25 ans et leurs parents, souvent adossés à un CSAPA.</dd>
+      </div>
+      <div class="terme">
+        <dt>Groupe d'entraide</dt>
+        <dd>Réunions animées par des personnes elles-mêmes concernées (ex-consommateurs ou proches), comme Al-Anon ou Nar-Anon pour l'entourage.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2>Questions fréquentes</h2>
+    <details class="faq-item" open>
+      <summary>La prise en charge en addictologie est-elle gratuite ?</summary>
+      <p>Les CSAPA, CAARUD et lignes d'écoute nationales sont gratuits et anonymes. Une hospitalisation en établissement public est prise en charge par l'Assurance Maladie ; des frais peuvent exister en clinique privée, à vérifier directement auprès de l'établissement.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Faut-il une ordonnance pour consulter ?</summary>
+      <p>Non. L'accueil en CSAPA se fait sans ordonnance et sans avance de frais. Une hospitalisation nécessite en général un avis médical préalable ; contactez directement le secrétariat de l'unité concernée.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Je veux de l'aide pour un proche qui refuse d'en parler, par où commencer ?</summary>
+      <p>Les CSAPA et les lignes d'écoute reçoivent aussi l'entourage, sans que la personne concernée soit présente ou même informée. Un groupe comme Al-Anon ou Nar-Anon peut aussi être un premier pas, rien que pour vous.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Quelle différence entre CSAPA et CAARUD ?</summary>
+      <p>Le CSAPA vise un accompagnement et, si la personne le souhaite, un soin. Le CAARUD s'adresse à des personnes qui ne sont pas nécessairement prêtes à un soin, avec un objectif de réduction des risques (matériel stérile, information, premiers contacts).</p>
+    </details>
+  </section>
+
+  <section class="limites">
+    <h2>À savoir avant de contacter ces structures</h2>
+    <p>Cette sélection est non exhaustive et vérifiée manuellement à partir de sources publiques (ARS Île-de-France, Assurance Maladie, sites des établissements) le 14 septembre 2026. Horaires, numéros et modalités d'accueil peuvent changer : nous vous recommandons de vérifier ces informations directement auprès de la structure avant de vous déplacer. Pour une liste exhaustive et mise à jour en continu, consultez aussi <a href="https://www.iledefrance.ars.sante.fr/etablissements-medico-sociaux-de-prise-en-charge-des-conduites-addictives" target="_blank" rel="noopener">la cartographie de l'ARS Île-de-France</a> et l'<a href="https://www.drogues-info-service.fr/Adresses-utiles" target="_blank" rel="noopener">annuaire de Drogues Info Service</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <p>Annuaire indépendant à but informatif. Ne remplace pas un avis médical.<br>
+      <a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a> · <a href="#">Nous signaler une erreur</a></p>
+    </div>
+    <div>
+      <p>Dernière mise à jour : 14 septembre 2026<br>Île-de-France — prochainement : autres régions</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage-compat.js"></script>
+<script>
+/* ============================================================
+   CONFIGURATION FIREBASE — À REMPLACER
+   Remplacez les valeurs ci-dessous par celles de VOTRE projet
+   Firebase (voir le guide de mise en place fourni séparément).
+   Tant que apiKey vaut "VOTRE_API_KEY", la connexion reste désactivée
+   et affiche un message d'information à la place d'une erreur.
+   ============================================================ */
+const firebaseConfig = {
+  apiKey: "VOTRE_API_KEY",
+  authDomain: "VOTRE_PROJET.firebaseapp.com",
+  projectId: "VOTRE_PROJET",
+  storageBucket: "VOTRE_PROJET.appspot.com",
+  messagingSenderId: "VOTRE_SENDER_ID",
+  appId: "VOTRE_APP_ID"
+};
+
+const firebaseReady = firebaseConfig.apiKey !== "VOTRE_API_KEY";
+let auth, db, storage, currentUser = null;
+
+if(firebaseReady){
+  firebase.initializeApp(firebaseConfig);
+  auth = firebase.auth();
+  db = firebase.firestore();
+  storage = firebase.storage();
+}
+
+/* ---------- Éléments UI ---------- */
+const loginModal = document.getElementById('loginModal');
+const loginBtn = document.getElementById('loginBtn');
+const closeModal = document.getElementById('closeModal');
+const userChip = document.getElementById('userChip');
+const userEmail = document.getElementById('userEmail');
+const logoutBtn = document.getElementById('logoutBtn');
+const espaceLink = document.getElementById('espaceLink');
+const monEspace = document.getElementById('monEspace');
+const firebaseWarning = document.getElementById('firebaseWarning');
+const authError = document.getElementById('authError');
+let authMode = 'login'; // ou 'signup'
+
+function openModal(){
+  loginModal.style.display = 'flex';
+  firebaseWarning.style.display = firebaseReady ? 'none' : 'block';
+}
+function closeModalFn(){ loginModal.style.display = 'none'; authError.style.display = 'none'; }
+
+loginBtn.addEventListener('click', openModal);
+closeModal.addEventListener('click', closeModalFn);
+loginModal.addEventListener('click', e => { if(e.target === loginModal) closeModalFn(); });
+
+document.getElementById('toggleAuthMode').addEventListener('click', e => {
+  e.preventDefault();
+  authMode = authMode === 'login' ? 'signup' : 'login';
+  document.getElementById('modalTitle').textContent = authMode === 'login' ? 'Se connecter' : 'Créer un compte';
+  document.getElementById('emailAuthBtn').textContent = authMode === 'login' ? 'Se connecter' : 'Créer mon compte';
+  e.target.textContent = authMode === 'login' ? 'Pas encore de compte ? Créer un compte' : 'Déjà un compte ? Se connecter';
+});
+
+document.getElementById('googleBtn').addEventListener('click', () => {
+  if(!firebaseReady) return;
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).then(closeModalFn).catch(e => showAuthError(e));
+});
+
+document.getElementById('emailAuthBtn').addEventListener('click', () => {
+  if(!firebaseReady) return;
+  const email = document.getElementById('authEmail').value.trim();
+  const pass = document.getElementById('authPassword').value;
+  if(!email || !pass){ showAuthError({message:"Merci de renseigner un e-mail et un mot de passe."}); return; }
+  const action = authMode === 'login'
+    ? auth.signInWithEmailAndPassword(email, pass)
+    : auth.createUserWithEmailAndPassword(email, pass);
+  action.then(closeModalFn).catch(e => showAuthError(e));
+});
+
+function showAuthError(e){
+  authError.textContent = e.message || "Une erreur est survenue.";
+  authError.style.display = 'block';
+}
+
+logoutBtn.addEventListener('click', () => { if(firebaseReady) auth.signOut(); });
+
+espaceLink.addEventListener('click', e => {
+  e.preventDefault();
+  monEspace.scrollIntoView({behavior:'smooth'});
+});
+
+if(firebaseReady){
+  auth.onAuthStateChanged(user => {
+    currentUser = user;
+    if(user){
+      loginBtn.style.display = 'none';
+      userChip.style.display = 'flex';
+      userEmail.textContent = user.displayName || user.email;
+      espaceLink.style.display = 'inline';
+      monEspace.style.display = 'block';
+      chargerProfil();
+      chargerRdv();
+      chargerDocs();
+    } else {
+      loginBtn.style.display = 'inline-block';
+      userChip.style.display = 'none';
+      espaceLink.style.display = 'none';
+      monEspace.style.display = 'none';
+    }
+  });
+}
+
+/* ---------- Onglets "Mon espace" ---------- */
+document.querySelectorAll('#monEspace .chip-group .chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#monEspace .chip-group .chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+    document.getElementById('tabProfil').style.display = btn.dataset.tab === 'profil' ? 'block' : 'none';
+    document.getElementById('tabRdv').style.display = btn.dataset.tab === 'rdv' ? 'block' : 'none';
+    document.getElementById('tabDocs').style.display = btn.dataset.tab === 'docs' ? 'block' : 'none';
+  });
+});
+
+/* ---------- Profil (Firestore: users/{uid}) ---------- */
+function chargerProfil(){
+  db.collection('users').doc(currentUser.uid).get().then(doc => {
+    const d = doc.exists ? doc.data() : {};
+    document.getElementById('profPrenom').value = d.prenom || '';
+    document.getElementById('profVille').value = d.ville || '';
+    document.getElementById('profTel').value = d.tel || '';
+    document.getElementById('profNotes').value = d.notes || '';
+  });
+}
+document.getElementById('saveProfilBtn').addEventListener('click', () => {
+  db.collection('users').doc(currentUser.uid).set({
+    prenom: document.getElementById('profPrenom').value.trim(),
+    ville: document.getElementById('profVille').value.trim(),
+    tel: document.getElementById('profTel').value.trim(),
+    notes: document.getElementById('profNotes').value.trim()
+  }, {merge:true}).then(() => {
+    const ok = document.getElementById('profilSaved');
+    ok.style.display = 'inline';
+    setTimeout(() => ok.style.display = 'none', 2000);
+  });
+});
+
+/* ---------- Mes RDV (Firestore: users/{uid}/rdv) ---------- */
+function chargerRdv(){
+  db.collection('users').doc(currentUser.uid).collection('rdv').orderBy('date').get().then(snap => {
+    const today = new Date().toISOString().slice(0,10);
+    const aVenir = [], passes = [];
+    snap.forEach(doc => {
+      const d = {id: doc.id, ...doc.data()};
+      (d.date >= today ? aVenir : passes).push(d);
+    });
+    renderRdvList('rdvAVenir', aVenir, "Aucun rendez-vous à venir pour l'instant.");
+    renderRdvList('rdvPasses', passes.reverse(), "Aucun rendez-vous passé enregistré.");
+  });
+}
+function renderRdvList(elId, list, emptyMsg){
+  const el = document.getElementById(elId);
+  if(list.length === 0){ el.innerHTML = `<p style="color:var(--ink-soft); font-size:.88rem;">${emptyMsg}</p>`; return; }
+  el.innerHTML = list.map(d => `
+    <div class="card" style="margin-bottom:10px; display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+      <div>
+        <strong>${d.structure}</strong><br>
+        <span style="font-size:.85rem; color:var(--ink-soft);">${d.date}${d.heure ? ' à ' + d.heure : ''}${d.note ? ' — ' + d.note : ''}</span>
+      </div>
+      <button class="reset-btn" data-id="${d.id}" style="padding:4px 10px;">Supprimer</button>
+    </div>
+  `).join('');
+  el.querySelectorAll('button[data-id]').forEach(b => {
+    b.addEventListener('click', () => {
+      db.collection('users').doc(currentUser.uid).collection('rdv').doc(b.dataset.id).delete().then(chargerRdv);
+    });
+  });
+}
+document.getElementById('addRdvBtn').addEventListener('click', () => {
+  const structure = document.getElementById('rdvStructure').value.trim();
+  const date = document.getElementById('rdvDate').value;
+  if(!structure || !date) return;
+  db.collection('users').doc(currentUser.uid).collection('rdv').add({
+    structure, date,
+    heure: document.getElementById('rdvHeure').value,
+    note: document.getElementById('rdvNote').value.trim()
+  }).then(() => {
+    document.getElementById('rdvStructure').value = '';
+    document.getElementById('rdvDate').value = '';
+    document.getElementById('rdvHeure').value = '';
+    document.getElementById('rdvNote').value = '';
+    chargerRdv();
+  });
+});
+
+/* ---------- Mes documents (Storage + Firestore: users/{uid}/documents) ---------- */
+function chargerDocs(){
+  db.collection('users').doc(currentUser.uid).collection('documents').orderBy('date','desc').get().then(snap => {
+    const el = document.getElementById('docsList');
+    if(snap.empty){ el.innerHTML = "<p style=\"color:var(--ink-soft); font-size:.88rem;\">Aucun document pour l'instant.</p>"; return; }
+    el.innerHTML = '';
+    snap.forEach(doc => {
+      const d = doc.data();
+      const row = document.createElement('div');
+      row.className = 'card';
+      row.style.cssText = 'margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; gap:10px;';
+      row.innerHTML = `<a href="${d.url}" target="_blank" rel="noopener">${d.nom}</a><button class="reset-btn" style="padding:4px 10px;">Supprimer</button>`;
+      row.querySelector('button').addEventListener('click', () => {
+        storage.ref(d.path).delete().finally(() => {
+          db.collection('users').doc(currentUser.uid).collection('documents').doc(doc.id).delete().then(chargerDocs);
+        });
+      });
+      el.appendChild(row);
+    });
+  });
+}
+document.getElementById('addDocBtn').addEventListener('click', () => {
+  const file = document.getElementById('docFile').files[0];
+  if(!file) return;
+  const status = document.getElementById('docUploadStatus');
+  status.textContent = 'Envoi en cours…';
+  const path = `users/${currentUser.uid}/documents/${Date.now()}_${file.name}`;
+  storage.ref(path).put(file).then(snap => snap.ref.getDownloadURL()).then(url => {
+    return db.collection('users').doc(currentUser.uid).collection('documents').add({
+      nom: file.name, url, path, date: new Date().toISOString()
+    });
+  }).then(() => {
+    status.textContent = '';
+    document.getElementById('docFile').value = '';
+    chargerDocs();
+  }).catch(() => { status.textContent = "Échec de l'envoi."; });
+});
+</script>
+
+<script>
+/* ---------- DONNÉES ---------- */
+/* Sélection vérifiée manuellement, sources publiques (ARS IDF, Assurance Maladie, sites officiels).
+   mode: "ambulatoire" et/ou "hospitalisation"
+   pub: "moi" et/ou "proche" */
+const structures = [
+  {
+    nom: "Hôpital Marmottan — Centre médical (CSAPA)",
+    type: "CSAPA hospitalier",
+    ville: "Paris 17e", dept: "75",
+    adresse: "17-19 rue d'Armaillé, 75017 Paris",
+    tel: "01 56 68 70 30",
+    site: "https://www.hopital-marmottan.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultations d'addictologie anonymes et gratuites, toutes addictions hors alcool isolé. Reçoit aussi l'entourage sans rendez-vous préalable de la personne concernée."
+  },
+  {
+    nom: "Hôpital Marmottan — Unité d'hospitalisation en addictologie",
+    type: "Hôpital", ville: "Paris 17e", dept: "75",
+    adresse: "17-19 rue d'Armaillé, 75017 Paris",
+    tel: "01 56 68 70 24",
+    site: "https://www.hopital-marmottan.fr",
+    mode: ["hospitalisation"], pub: ["moi"],
+    desc: "Hospitalisation sur indication médicale après plusieurs entretiens préalables avec l'équipe. Prise de contact par téléphone."
+  },
+  {
+    nom: "CSAPA Espace Murger — Hôpital Fernand-Widal (AP-HP)",
+    type: "CSAPA hospitalier", ville: "Paris 10e", dept: "75",
+    adresse: "200 rue du Faubourg-Saint-Denis, 75010 Paris",
+    tel: "01 40 05 42 14",
+    site: "https://hopital-lariboisiere.aphp.fr/csapa-espace-murger-fernand-widal",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultations confidentielles et anonymes sur rendez-vous, suivi de traitement de substitution, prise en charge du chemsex."
+  },
+  {
+    nom: "Unité de soins en addictologie (MA2) — Hôpital Fernand-Widal",
+    type: "Hôpital", ville: "Paris 10e", dept: "75",
+    adresse: "200 rue du Faubourg-Saint-Denis, 75010 Paris",
+    tel: "01 40 05 42 01",
+    site: "https://www.aphp.fr/fernand-widal/service-de-medecine-addictologique",
+    mode: ["hospitalisation"], pub: ["moi"],
+    desc: "Sevrage hospitalier (alcool, drogues, médicaments), une à plusieurs semaines. Admission sur indication médicale, demande par mail au secrétariat."
+  },
+  {
+    nom: "CSAPA Le Trait d'Union (Oppelia)",
+    type: "CSAPA associatif", ville: "Boulogne-Billancourt", dept: "92",
+    adresse: "4 rue Neuve Saint-Germain, 92100 Boulogne-Billancourt",
+    tel: "01 41 41 98 01",
+    site: "https://www.oppelia.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Accompagnement médico-psycho-social gratuit et anonyme, géré par l'association Oppelia."
+  },
+  {
+    nom: "CSAPA Arthur Rimbaud (CH des 4 Villes)",
+    type: "CSAPA hospitalier", ville: "Boulogne-Billancourt", dept: "92",
+    adresse: "13 bis rue Rieux, 92100 Boulogne-Billancourt",
+    tel: "01 77 70 75 87",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie rattaché au Centre Hospitalier des 4 Villes."
+  },
+  {
+    nom: "CSAPA APORIA",
+    type: "CSAPA associatif", ville: "Nanterre", dept: "92",
+    adresse: "15 rue des Goulvents, 92000 Nanterre",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste. Contact conseillé via le site de l'Hôpital de Nanterre avant de vous déplacer."
+  },
+  {
+    nom: "Service d'addictologie — Hôpital Corentin Celton (AP-HP)",
+    type: "Hôpital", ville: "Issy-les-Moulineaux", dept: "92",
+    adresse: "4 parvis Corentin Celton, 92130 Issy-les-Moulineaux",
+    tel: "",
+    site: "",
+    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
+    desc: "Suivi ambulatoire hospitalier et sevrages simples, en lien avec le service d'hospitalisation."
+  },
+  {
+    nom: "CSAPA du Centre Hospitalier de Versailles",
+    type: "CSAPA hospitalier", ville: "Versailles", dept: "78",
+    adresse: "55 rue du Maréchal Foch, Maison d'Espagne, 78000 Versailles",
+    tel: "01 39 63 95 00",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Antenne principale du CSAPA du Centre Hospitalier de Versailles."
+  },
+  {
+    nom: "CSAPA du CHV — antenne de Trappes",
+    type: "CSAPA hospitalier", ville: "Trappes", dept: "78",
+    adresse: "Place de la Mairie, Institut de Promotion de la Santé (2e ét.), 78190 Trappes",
+    tel: "01 30 69 98 18",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Antenne locale du CSAPA du Centre Hospitalier de Versailles."
+  },
+  {
+    nom: "CSAPA de Saint-Germain-en-Laye",
+    type: "CSAPA", ville: "Saint-Germain-en-Laye", dept: "78",
+    adresse: "8 bis rue d'Ourches, 78100 Saint-Germain-en-Laye",
+    tel: "01 30 87 94 95",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Accueil, évaluation et accompagnement en addictologie, gratuit et anonyme."
+  },
+  {
+    nom: "CSAPA de Mantes-la-Jolie",
+    type: "CSAPA", ville: "Mantes-la-Jolie", dept: "78",
+    adresse: "122 boulevard Carnot, 78200 Mantes-la-Jolie",
+    tel: "01 30 63 77 90",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du Mantois."
+  },
+  {
+    nom: "CAARUD Sida Paroles",
+    type: "CAARUD", ville: "Mantes-la-Jolie", dept: "78",
+    adresse: "26 rue de Gassicourt, 78200 Mantes-la-Jolie",
+    tel: "01 34 97 97 70",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi"],
+    desc: "Accueil à bas seuil et réduction des risques, sans obligation d'engager un soin."
+  },
+  {
+    nom: "CSAPA Essonne Accueil",
+    type: "CSAPA", ville: "Évry-Courcouronnes", dept: "91",
+    adresse: "Évry (91034)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "CSAPA généraliste de l'agglomération Évry Centre Essonne. Adresse précise à confirmer avant déplacement."
+  },
+  {
+    nom: "CSAPA spécialisé alcool d'Évry",
+    type: "CSAPA", ville: "Évry-Courcouronnes", dept: "91",
+    adresse: "Évry (91000)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool."
+  },
+  {
+    nom: "CSAPA généraliste d'Arpajon",
+    type: "CSAPA", ville: "Arpajon", dept: "91",
+    adresse: "Arpajon (91290)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste."
+  },
+  {
+    nom: "CSAPA généraliste d'Athis-Mons",
+    type: "CSAPA", ville: "Athis-Mons", dept: "91",
+    adresse: "Athis-Mons (91200)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste."
+  },
+  {
+    nom: "CSAPA spécialisé alcool d'Orsay",
+    type: "CSAPA", ville: "Orsay", dept: "91",
+    adresse: "Orsay (91400)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool."
+  },
+  {
+    nom: "CSAPA généraliste Fleury Mérogis",
+    type: "CSAPA", ville: "Sainte-Geneviève-des-Bois", dept: "91",
+    adresse: "Sainte-Geneviève-des-Bois (91700)",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste."
+  },
+  {
+    nom: "CSAPA Le Chat",
+    type: "CSAPA municipal", ville: "Saint-Denis", dept: "93",
+    adresse: "6 rue du Cygne (CMS du Cygne), 93200 Saint-Denis",
+    tel: "01 83 72 20 23",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Accueil, orientation et soins pour les personnes en difficulté avec une conduite addictive, ouvert à l'entourage. Ateliers thérapeutiques et groupes de parole."
+  },
+  {
+    nom: "CSAPA Le Corbillon — Hôpital Delafontaine",
+    type: "CSAPA hospitalier", ville: "Saint-Denis", dept: "93",
+    adresse: "2 rue du Docteur Delafontaine, 93200 Saint-Denis",
+    tel: "",
+    site: "https://www.ch-stdenis.fr",
+    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
+    desc: "Accompagnement des addictions aux opiacés, cocaïne et cannabis, traitements de substitution. Sevrages ambulatoires et hospitaliers en lien avec l'équipe de liaison de l'hôpital."
+  },
+  {
+    nom: "CSAPA — antenne de Stains",
+    type: "CSAPA municipal", ville: "Stains", dept: "93",
+    adresse: "27-33 boulevard Maxime-Gorki (CMS Colette Coulon), 93240 Stains",
+    tel: "01 49 71 40 35",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Antenne de proximité du CSAPA de Saint-Denis, à quelques kilomètres d'Épinay-sur-Seine."
+  },
+  {
+    nom: "CSAPA d'Aubervilliers",
+    type: "CSAPA municipal", ville: "Aubervilliers", dept: "93",
+    adresse: "5 rue du Docteur Pesqué (Centre Municipal de Santé), 93300 Aubervilliers",
+    tel: "01 48 11 21 90",
+    site: "https://www.aubervilliers.fr/Centre-de-soins-accompagnement-prevention-en-addictologie",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultations pour toutes addictions avec ou sans substance, consultation dédiée à l'entourage (individuel, couple, famille), consultation jeunes consommateurs dès 13 ans."
+  },
+  {
+    nom: "CSAPA PASS (Association CaPASSCité)",
+    type: "CSAPA associatif", ville: "Montreuil", dept: "93",
+    adresse: "15 avenue de la Résistance, 93100 Montreuil",
+    tel: "",
+    site: "https://www.doctolib.fr/centre-soins-accompagnement-prevention-addictologie/montreuil/centre-de-soin-d-accompagnement-et-de-prevention-en-addictologie-csapa-pass-association-capasscite",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins, d'accompagnement et de prévention en addictologie. Prise de rendez-vous en ligne possible."
+  },
+  {
+    nom: "CSAPA d'Argenteuil (Association Addictions France)",
+    type: "CSAPA associatif", ville: "Argenteuil", dept: "95",
+    adresse: "12 boulevard Maurice Berteaux, 95100 Argenteuil",
+    tel: "01 30 76 30 13",
+    site: "https://addictions-france.org/etablissements/csapa-argenteuil/",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Structure ambassadrice du programme « Moi(s) sans tabac ». À quelques minutes d'Épinay-sur-Seine, de l'autre côté de la Seine."
+  },
+  {
+    nom: "CSAPA AGATA — Gennevilliers",
+    type: "CSAPA associatif", ville: "Gennevilliers", dept: "92",
+    adresse: "34 rue Pierre Timbaud, 92230 Gennevilliers",
+    tel: "",
+    site: "https://www.agata-asso.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste. Contact conseillé par le site de l'association avant de vous déplacer."
+  },
+  {
+    nom: "CSAPA AGATA — Rueil-Malmaison",
+    type: "CSAPA associatif", ville: "Rueil-Malmaison", dept: "92",
+    adresse: "9 avenue Beauséjour, 92500 Rueil-Malmaison",
+    tel: "",
+    site: "https://www.agata-asso.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Antenne de l'association AGATA, qui couvre aussi Colombes, Asnières et Villeneuve-la-Garenne."
+  },
+  {
+    nom: "CSAPA Nord 92 — Centre Victor Segalen",
+    type: "CSAPA hospitalier", ville: "Villeneuve-la-Garenne", dept: "92",
+    adresse: "75 avenue de Verdun, 92390 Villeneuve-la-Garenne",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie rattaché à l'Hôpital Nord 92."
+  },
+  {
+    nom: "CSAPA Le Carrousel — GHSIF",
+    type: "CSAPA hospitalier", ville: "Melun", dept: "77",
+    adresse: "7 place Praslin, 77000 Melun",
+    tel: "01 81 74 28 40",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Accueil des usagers de drogues, médicaments, addictions sans substance (jeux vidéo, jeux d'argent) et de leur entourage. Consultation jeunes consommateurs sur place."
+  },
+  {
+    nom: "Unité d'addictologie — GHSIF Melun (ELSA)",
+    type: "Hôpital", ville: "Melun", dept: "77",
+    adresse: "270 avenue Marc Jacquet, 77000 Melun",
+    tel: "01 81 74 17 17",
+    site: "",
+    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
+    desc: "Équipe de liaison et de soins en addictologie de l'hôpital, en lien avec les sevrages hospitaliers."
+  },
+  {
+    nom: "CSAPA Hevea",
+    type: "CSAPA hospitalier", ville: "Meaux", dept: "77",
+    adresse: "6-8 rue Saint-Fiacre, 77100 Meaux",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du Grand Hôpital de l'Est Francilien. Numéro à confirmer directement auprès de l'accueil de l'hôpital."
+  },
+  {
+    nom: "CSAPA de Provins",
+    type: "CSAPA", ville: "Provins", dept: "77",
+    adresse: "1 rue Saint-Thibault, 77160 Provins",
+    tel: "01 60 52 07 73",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie pour l'est de la Seine-et-Marne."
+  },
+  {
+    nom: "CSAPA de Cergy-Pontoise (Association Addictions France)",
+    type: "CSAPA associatif", ville: "Cergy", dept: "95",
+    adresse: "18 boulevard de la Paix, Immeuble Buroplus, 95800 Cergy",
+    tel: "01 30 30 50 96",
+    site: "https://addictions-france.org/etablissements/csapa-cergy-pontoise/",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultations sur rendez-vous, confidentielles et gratuites, pour les personnes concernées et leur entourage."
+  },
+  {
+    nom: "CSAPA Oppelia Rivage",
+    type: "CSAPA associatif", ville: "Sarcelles", dept: "95",
+    adresse: "18 avenue du 8 mai 1945, 95200 Sarcelles",
+    tel: "",
+    site: "https://www.oppelia.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du réseau Oppelia."
+  },
+  {
+    nom: "Réseau PASS — CSAPA Garges-lès-Gonesse",
+    type: "CSAPA", ville: "Garges-lès-Gonesse", dept: "95",
+    adresse: "36-44 avenue Frédéric Joliot Curie, 95140 Garges-lès-Gonesse",
+    tel: "",
+    site: "https://rvh-synergie.org",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et d'insertion en addictologie, dessert l'est du Val-d'Oise."
+  },
+  {
+    nom: "Hôpital de jour d'addictologie — Hôpital Simone Veil",
+    type: "Hôpital", ville: "Eaubonne", dept: "95",
+    adresse: "14 rue de Saint-Prix, 95600 Eaubonne",
+    tel: "01 34 06 62 27",
+    site: "https://www.hopital-simoneveil.fr/services/addictologie/",
+    mode: ["hospitalisation"], pub: ["moi"],
+    desc: "Prise en charge des troubles de l'usage d'alcool en hôpital de jour : sevrage, consolidation du sevrage, aide au maintien de l'abstinence, ateliers thérapeutiques."
+  },
+  {
+    nom: "CSAPA Imagine — Groupement Hospitalier Eaubonne-Montmorency",
+    type: "CSAPA hospitalier", ville: "Ermont", dept: "95",
+    adresse: "1 rue Saint-Flaive Prolongée, 95120 Ermont",
+    tel: "01 39 89 17 49",
+    site: "https://www.hopital-simoneveil.fr/services/centre-imagine/",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "CSAPA ambulatoire avec unité méthadone, à 5 minutes d'Eaubonne. Consultation jeunes consommateurs pour les moins de 25 ans, avec ou sans entourage."
+  },
+  {
+    nom: "Service de psychiatrie-addictologie — Hôpital Louis-Mourier (AP-HP)",
+    type: "Hôpital", ville: "Colombes", dept: "92",
+    adresse: "178 rue des Renouillers, 92700 Colombes",
+    tel: "01 47 60 65 30",
+    site: "https://hopital-louis-mourier.aphp.fr/psychiatrie-addictologie-beaujon/",
+    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
+    desc: "Unité d'hospitalisation en addictologie (8 lits) et équipe de liaison (ELSA) qui accompagne aussi les patients hospitalisés dans les autres services de l'hôpital."
+  },
+  {
+    nom: "UTAMA — Hôpital Beaujon (AP-HP)",
+    type: "Hôpital", ville: "Clichy", dept: "92",
+    adresse: "100 boulevard du Général Leclerc, 92110 Clichy",
+    tel: "01 40 87 58 84",
+    site: "https://www.aphp.fr/service/service-34-005",
+    mode: ["ambulatoire"], pub: ["moi"],
+    desc: "Unité de Traitement Ambulatoire des Maladies Addictives. Secteur : Clichy, Asnières, Courbevoie, Puteaux, Paris 17e et 18e. Consultations sur rendez-vous, gratuites."
+  },
+  {
+    nom: "CSAPA — Hôpital Jean-Verdier (AP-HP)",
+    type: "CSAPA hospitalier", ville: "Bondy", dept: "93",
+    adresse: "Avenue du 14 Juillet, Hôpital Jean-Verdier, 93140 Bondy",
+    tel: "01 48 95 59 33",
+    site: "https://chu93.aphp.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultation jeunes consommateurs (13-25 ans) en lien avec la Maison des Adolescents Casita de l'hôpital Avicenne."
+  },
+  {
+    nom: "Unité d'addictologie — Hôpital René-Muret (AP-HP)",
+    type: "Hôpital", ville: "Sevran", dept: "93",
+    adresse: "Avenue du Docteur Schaeffner, 93270 Sevran",
+    tel: "01 41 52 56 74",
+    site: "https://chu93.aphp.fr",
+    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
+    desc: "Depuis janvier 2026, filière spécialisée dans la prise en charge des usages détournés du protoxyde d'azote, en plus du suivi addictologique général."
+  },
+  {
+    nom: "Service d'addictologie — Hôpital Paul-Brousse (AP-HP)",
+    type: "Hôpital", ville: "Villejuif", dept: "94",
+    adresse: "Bâtiment Moreau-de-Tours, Hôpital Paul-Brousse, 94800 Villejuif",
+    tel: "01 45 59 32 60",
+    site: "",
+    mode: ["ambulatoire","hospitalisation"], pub: ["moi"],
+    desc: "Un des services de référence en addictologie en France (alcool, tabac, drogues), consultations et hospitalisations selon indication médicale."
+  },
+  {
+    nom: "CSAPA Regain — Hôpital Saint-Camille",
+    type: "CSAPA hospitalier", ville: "Bry-sur-Marne", dept: "94",
+    adresse: "Hôpital Saint-Camille, 94360 Bry-sur-Marne",
+    tel: "01 49 83 10 01",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie pour l'est du Val-de-Marne."
+  },
+  {
+    nom: "CSAPA Verlaine / Littoral",
+    type: "CSAPA", ville: "Villeneuve-Saint-Georges", dept: "94",
+    adresse: "Villeneuve-Saint-Georges (94190)",
+    tel: "01 43 82 58 38",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie pour le sud du Val-de-Marne."
+  },
+  {
+    nom: "CSAPA UDSM Meltem 94 — Centre Thérapeutique Résidentiel",
+    type: "CSAPA associatif", ville: "Champigny-sur-Marne", dept: "94",
+    adresse: "17 avenue de l'Épargne, 94500 Champigny-sur-Marne",
+    tel: "01 41 77 40 30",
+    site: "https://www.udsm-asso.fr",
+    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
+    desc: "Dispose d'un Centre Thérapeutique Résidentiel ouvert 24h/24, 7j/7, en plus d'un accueil de jour et de la délivrance de traitements de substitution."
+  },
+  {
+    nom: "CSAPA de Villejuif",
+    type: "CSAPA", ville: "Villejuif", dept: "94",
+    adresse: "9 rue Georges Bizet, 94800 Villejuif",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Centre de soins et de prévention en addictologie généraliste. Numéro à confirmer directement auprès du centre."
+  },
+  {
+    nom: "CSAPA d'Ivry-sur-Seine",
+    type: "CSAPA hospitalier", ville: "Ivry-sur-Seine", dept: "94",
+    adresse: "64 avenue Georges Gosnat, 94200 Ivry-sur-Seine",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Établissement public départemental d'hospitalisation, centre de soins et de prévention en addictologie."
+  },
+  {
+    nom: "CSAPA d'Aulnay-sous-Bois",
+    type: "CSAPA municipal", ville: "Aulnay-sous-Bois", dept: "93",
+    adresse: "2 rue du Limousin, 93600 Aulnay-sous-Bois",
+    tel: "",
+    site: "",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Consultations en tabacologie, soutien psychologique et social, bilans de santé. Numéro à confirmer directement auprès du centre."
+  },
+  {
+    nom: "Association Charonne (Oppelia)",
+    type: "Association", ville: "Paris 13e", dept: "75",
+    adresse: "Paris (75013)",
+    tel: "",
+    site: "https://www.oppelia.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Accompagnement social et sanitaire des personnes en difficulté avec leurs consommations."
+  },
+  {
+    nom: "Al-Anon / Alateen — Groupes familiaux",
+    type: "Groupe d'entraide", ville: "Versailles (siège) + réunions dans toute l'Île-de-France", dept: "78",
+    adresse: "24 rue du Maréchal Joffre, 78000 Versailles",
+    tel: "09 69 39 40 20",
+    site: "https://al-anon.fr",
+    mode: ["ambulatoire"], pub: ["proche"],
+    desc: "Réunions gratuites, anonymes, sans inscription, pour toute personne affectée par la consommation d'alcool d'un proche."
+  },
+  {
+    nom: "Nar-Anon France — Groupes familiaux",
+    type: "Groupe d'entraide", ville: "Réunions en Île-de-France", dept: "IDF",
+    adresse: "",
+    tel: "",
+    site: "https://nar-anon.org/france/",
+    mode: ["ambulatoire"], pub: ["proche"],
+    desc: "Groupes d'entraide en 12 étapes pour les proches de personnes dépendantes aux drogues."
+  },
+  {
+    nom: "Drogues Info Service",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "0 800 23 13 13",
+    site: "https://www.drogues-info-service.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Écoute, information et orientation, anonyme et gratuit, 8h–2h, 7j/7. Tchat disponible sur le site."
+  },
+  {
+    nom: "Alcool Info Service",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "0 980 980 930",
+    site: "https://www.alcool-info-service.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Écoute et orientation autour de l'alcool, gratuit et non surtaxé, 8h–2h, 7j/7."
+  },
+  {
+    nom: "Tabac Info Service",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "39 89",
+    site: "https://www.tabac-info-service.fr",
+    mode: ["ambulatoire"], pub: ["moi"],
+    desc: "Conseils de tabacologues pour l'arrêt du tabac, du lundi au samedi, 8h–20h."
+  },
+  {
+    nom: "Joueurs Info Service",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "09 74 75 13 13",
+    site: "https://www.joueurs-info-service.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Écoute et orientation autour des jeux d'argent et de hasard, anonyme, 8h–2h, 7j/7."
+  },
+  {
+    nom: "Écoute Cannabis",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "0 980 980 940",
+    site: "https://www.drogues-info-service.fr",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Ligne dédiée aux questions sur le cannabis, anonyme et gratuite, 8h–2h, 7j/7."
+  },
+  {
+    nom: "Fil Santé Jeunes",
+    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
+    adresse: "",
+    tel: "0 800 235 236",
+    site: "https://www.filsantejeunes.com",
+    mode: ["ambulatoire"], pub: ["moi","proche"],
+    desc: "Écoute généraliste pour les jeunes (santé, addictions, mal-être), anonyme et gratuite."
+  }
+];
+
+/* ---------- RENDU ---------- */
+const grid = document.getElementById('resultsGrid');
+const countEl = document.getElementById('resultCount');
+const cityInput = document.getElementById('cityInput');
+const villesList = document.getElementById('villes');
+
+let state = { mode: 'tous', pub: [], ville: '' };
+
+// datalist des villes
+const villesUniques = [...new Set(structures.map(s => s.ville))].sort();
+villesUniques.forEach(v => {
+  const opt = document.createElement('option');
+  opt.value = v;
+  villesList.appendChild(opt);
+});
+
+function modeLabel(m){ return m === 'ambulatoire' ? 'À domicile / ambulatoire' : 'Hospitalisation'; }
+function pubLabel(p){ return p === 'moi' ? 'Pour moi' : 'Pour un proche'; }
+
+function matches(s){
+  const modeOk = state.mode === 'tous' || s.mode.includes(state.mode);
+  const pubOk = state.pub.length === 0 || state.pub.some(p => s.pub.includes(p));
+  const villeOk = state.ville.trim() === '' ||
+    (s.ville + ' ' + s.dept + ' ' + s.adresse).toLowerCase().includes(state.ville.trim().toLowerCase());
+  return modeOk && pubOk && villeOk;
+}
+
+function render(){
+  const filtered = structures.filter(matches);
+  countEl.textContent = filtered.length + (filtered.length > 1 ? ' résultats' : ' résultat');
+  grid.innerHTML = '';
+
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="no-results">Aucune structure ne correspond à ces critères pour l’instant. Essayez une ville voisine, ou contactez le 0 800 23 13 13 (Drogues Info Service) qui pourra vous orienter.</div>';
+    return;
+  }
+
+  filtered.forEach(s => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    const badges = [
+      ...s.mode.map(m => `<span class="badge mode-${m === 'ambulatoire' ? 'ambu' : 'hosp'}">${modeLabel(m)}</span>`),
+      ...s.pub.map(p => `<span class="badge pub-${p === 'moi' ? 'moi' : 'proche'}">${pubLabel(p)}</span>`)
+    ].join('');
+
+    const gmapsQuery = encodeURIComponent(`${s.nom} ${s.adresse || s.ville}`);
+    const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${gmapsQuery}`;
+
+    card.innerHTML = `
+      <h3>${s.nom}</h3>
+      <div class="badges">${badges}</div>
+      ${s.adresse ? `<p class="addr">${s.adresse}</p>` : ''}
+      <p class="desc">${s.desc}</p>
+      <div class="meta-line">
+        ${s.tel ? `<a href="tel:${s.tel.replace(/\s/g,'')}">${s.tel}</a>` : ''}
+        ${s.site ? `<a href="${s.site}" target="_blank" rel="noopener">Site officiel</a>` : ''}
+        <a href="${gmapsUrl}" target="_blank" rel="noopener" style="color:var(--gold);">★ Avis Google Maps</a>
+      </div>
+      <p class="verified">Vérifié le 14/09/2026 — ${s.type}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('modeFilters').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if(!btn) return;
+  state.mode = btn.dataset.mode;
+  [...btn.parentElement.children].forEach(c => c.setAttribute('aria-pressed', c === btn));
+  render();
+});
+
+document.getElementById('publicFilters').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if(!btn) return;
+  const key = btn.dataset.public;
+  const pressed = btn.getAttribute('aria-pressed') === 'true';
+  btn.setAttribute('aria-pressed', String(!pressed));
+  state.pub = [...btn.parentElement.querySelectorAll('.chip[aria-pressed="true"]')].map(c => c.dataset.public);
+  render();
+});
+
+cityInput.addEventListener('input', e => {
+  state.ville = e.target.value;
+  render();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  state = { mode: 'tous', pub: [], ville: '' };
+  cityInput.value = '';
+  document.querySelectorAll('#modeFilters .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.mode === 'tous'));
+  document.querySelectorAll('#publicFilters .chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
