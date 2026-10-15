@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Annuaire-Addictologie : trouver un centre, une clinique ou une association près de chez vous</title>
-<meta name="description" content="Annuaire gratuit des CSAPA, CAARUD, hôpitaux et associations d'addictologie en Île-de-France. Filtrez par ville, par mode de prise en charge (ambulatoire ou hospitalisation) et selon que la demande concerne vous-même ou un proche.">
+<title>Ted Addictologie : trouvez un centre ou une association d'addictologie partout en France</title>
+<meta name="description" content="Annuaire gratuit des centres, hôpitaux, associations et lignes d\'écoute en addictologie, partout en France. Cherchez par ville, pour vous ou pour un proche.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.votre-domaine.fr/">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://tedaddictologie.fr/">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Annuaire-Addictologie : trouver de l'aide près de chez vous">
-<meta property="og:description" content="Annuaire gratuit et filtrable des centres, cliniques et associations d'addictologie en Île-de-France, pour vous ou pour un proche.">
+<meta property="og:title" content="Ted Addictologie : trouvez de l\'aide partout en France">
+<meta property="og:description" content="Annuaire gratuit et confidentiel des structures d\'addictologie, pour vous ou pour un proche, partout en France.">
 <meta property="og:locale" content="fr_FR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -50,221 +50,7 @@
 }
 </script>
 
-<style>
-  :root{
-    --bg:#EEF2EC;
-    --paper:#FAFBF8;
-    --ink:#1E2E28;
-    --ink-soft:#4A5B53;
-    --pine:#1F3A35;
-    --pine-dark:#152824;
-    --gold:#AD7F35;
-    --gold-soft:#EFE2C8;
-    --line:#D9E0D6;
-    --danger-bg:#FBEFE9;
-    --danger-ink:#7A3B1E;
-    --radius:4px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    line-height:1.55;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    color:var(--pine-dark);
-    line-height:1.15;
-    margin:0 0 .5em;
-    font-weight:500;
-  }
-  a{color:var(--pine);}
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
-    outline:3px solid var(--gold);
-    outline-offset:2px;
-  }
-  .wrap{max-width:1060px; margin:0 auto; padding:0 24px;}
-
-  /* HEADER */
-  header.site{
-    background:var(--pine);
-    color:#EAF0ED;
-    padding:14px 0;
-  }
-  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
-  .brand{display:flex; align-items:baseline; gap:10px;}
-  .brand strong{font-family:'Fraunces', serif; font-size:1.15rem; color:#fff; font-weight:500;}
-  .brand span{font-size:.82rem; color:#B9CCC4;}
-  nav.site-links{display:flex; gap:20px; font-size:.9rem;}
-  nav.site-links a{color:#D7E5DF; text-decoration:none;}
-  nav.site-links a:hover{color:#fff; text-decoration:underline;}
-
-  /* URGENCE BANNER */
-  .urgence{
-    background:var(--danger-bg);
-    border-bottom:1px solid #E7C9B4;
-    color:var(--danger-ink);
-    font-size:.88rem;
-    padding:9px 0;
-  }
-  .urgence .wrap{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
-  .urgence strong{font-weight:600;}
-
-  /* HERO */
-  .hero{padding:52px 0 28px;}
-  .hero h1{font-size:2.15rem; max-width:16ch;}
-  .hero p.lede{color:var(--ink-soft); max-width:56ch; font-size:1.05rem; margin-top:14px;}
-
-  /* FILTER PANEL */
-  .panel{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:24px;
-    margin-top:28px;
-  }
-  .panel-row{margin-bottom:20px;}
-  .panel-row:last-child{margin-bottom:0;}
-  .panel-row > .label{
-    font-size:.78rem;
-    font-weight:600;
-    color:var(--ink-soft);
-    margin-bottom:8px;
-    display:block;
-  }
-  .chip-group{display:flex; gap:8px; flex-wrap:wrap;}
-  .chip{
-    border:1px solid var(--line);
-    background:#fff;
-    color:var(--ink);
-    padding:8px 14px;
-    border-radius:20px;
-    font-size:.88rem;
-    cursor:pointer;
-    font-family:inherit;
-    transition:background .15s,border-color .15s,color .15s;
-  }
-  .chip:hover{border-color:var(--pine);}
-  .chip[aria-pressed="true"]{
-    background:var(--pine);
-    border-color:var(--pine);
-    color:#fff;
-  }
-  .search-row{display:flex; gap:10px; flex-wrap:wrap;}
-  #cityInput{
-    flex:1 1 240px;
-    padding:10px 14px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    font-size:.95rem;
-    font-family:inherit;
-    background:#fff;
-  }
-  .reset-btn{
-    border:1px solid var(--line);
-    background:#fff;
-    padding:10px 16px;
-    border-radius:var(--radius);
-    font-size:.88rem;
-    cursor:pointer;
-    color:var(--ink-soft);
-  }
-  .reset-btn:hover{border-color:var(--pine); color:var(--pine);}
-
-  /* RESULTS */
-  .results-head{
-    display:flex; justify-content:space-between; align-items:baseline;
-    margin:34px 0 14px; flex-wrap:wrap; gap:8px;
-  }
-  .results-head h2{font-size:1.15rem; margin:0;}
-  #resultCount{font-size:.85rem; color:var(--ink-soft);}
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-  @media (max-width:720px){ .grid{grid-template-columns:1fr;} }
-
-  .card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:18px 20px;
-  }
-  .card h3{font-size:1.02rem; margin-bottom:6px;}
-  .badges{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
-  .badge{
-    font-size:.72rem;
-    padding:3px 9px;
-    border-radius:20px;
-    font-weight:600;
-  }
-  .badge.mode-ambu{background:var(--gold-soft); color:#7A5A1E;}
-  .badge.mode-hosp{background:#E3E9F2; color:#2E4569;}
-  .badge.pub-moi{background:#E4EEE6; color:var(--pine-dark);}
-  .badge.pub-proche{background:#F0E6EE; color:#6B2E58;}
-  .card .addr{font-size:.88rem; color:var(--ink-soft); margin:6px 0;}
-  .card .desc{font-size:.88rem; margin:8px 0 10px;}
-  .card .meta-line{font-size:.85rem; display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
-  .card .meta-line a{text-decoration:none; font-weight:600;}
-  .card .verified{font-size:.72rem; color:#8A9690; margin-top:10px;}
-  .no-results{
-    grid-column:1/-1;
-    text-align:center;
-    padding:40px 20px;
-    color:var(--ink-soft);
-    border:1px dashed var(--line);
-    border-radius:var(--radius);
-  }
-
-  /* GLOSSAIRE */
-  section.glossaire{margin-top:64px;}
-  .glossaire-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 32px; margin-top:20px;}
-  @media (max-width:720px){ .glossaire-grid{grid-template-columns:1fr;} }
-  .terme dt{font-family:'Fraunces', serif; font-weight:500; color:var(--pine-dark); font-size:1rem; margin-bottom:4px;}
-  .terme dd{margin:0; font-size:.92rem; color:var(--ink-soft);}
-  .terme{margin-bottom:18px;}
-
-  /* FAQ */
-  section.faq{margin-top:56px;}
-  details.faq-item{
-    border-bottom:1px solid var(--line);
-    padding:16px 0;
-  }
-  details.faq-item summary{
-    cursor:pointer;
-    font-weight:600;
-    color:var(--pine-dark);
-    list-style:none;
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-  }
-  details.faq-item summary::-webkit-details-marker{display:none;}
-  details.faq-item summary::after{content:"+"; font-family:'Fraunces',serif; font-size:1.3rem; color:var(--gold);}
-  details.faq-item[open] summary::after{content:"–";}
-  details.faq-item p{margin:10px 0 0; color:var(--ink-soft); font-size:.92rem; max-width:66ch;}
-
-  section.limites{
-    margin-top:56px;
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px 24px;
-    font-size:.88rem;
-    color:var(--ink-soft);
-  }
-  section.limites h2{font-size:1rem;}
-
-  footer.site{
-    margin-top:70px;
-    border-top:1px solid var(--line);
-    padding:30px 0 50px;
-    font-size:.82rem;
-    color:var(--ink-soft);
-  }
-  footer.site .wrap{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;}
-  footer.site a{color:var(--ink-soft);}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -276,25 +62,7 @@
   </div>
 </div>
 
-<header class="site">
-  <div class="wrap">
-    <div class="brand">
-      <strong>Annuaire-Addictologie</strong>
-      <span>Glossaire &amp; annuaire addictologie</span>
-    </div>
-    <nav class="site-links">
-      <a href="#recherche">Trouver un centre</a>
-      <a href="#glossaire">Glossaire</a>
-      <a href="#faq">Questions fréquentes</a>
-      <a href="#" id="espaceLink" style="display:none;">Mon espace</a>
-      <button class="reset-btn" type="button" id="loginBtn" style="padding:7px 14px;">Se connecter</button>
-      <span id="userChip" style="display:none; align-items:center; gap:8px; color:#EAF0ED; font-size:.88rem;">
-        <span id="userEmail"></span>
-        <button class="reset-btn" type="button" id="logoutBtn" style="padding:5px 12px;">Se déconnecter</button>
-      </span>
-    </nav>
-  </div>
-</header>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><circle cx="8" cy="9" r="6" fill="#5B5FC7"/><circle cx="26" cy="9" r="6" fill="#5B5FC7"/><circle cx="8" cy="9" r="2.8" fill="#C9CCFF"/><circle cx="26" cy="9" r="2.8" fill="#C9CCFF"/><circle cx="17" cy="20" r="12" fill="#5B5FC7"/></svg>Ted Addictologie</a><nav class="site-links"><a class="iconbtn" href="index.html" aria-label="Retour à l'accueil" title="Accueil"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></a><a href="index.html#faq">Centre d'aide</a><a href="#" id="espaceLink" style="display:none;">Mon espace</a><button class="cta" type="button" id="loginBtn">Se connecter</button><span id="userChip" style="display:none;align-items:center;gap:8px;font-size:.88rem;"><span id="userEmail"></span><button class="reset-btn" type="button" id="logoutBtn">Se déconnecter</button></span></nav></div></header>
 
 <div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(21,40,36,.55); z-index:100; align-items:center; justify-content:center; padding:20px;">
   <div style="background:var(--paper); border-radius:var(--radius); padding:28px; max-width:380px; width:100%; position:relative;">
@@ -317,44 +85,19 @@
 
 <main class="wrap">
 
-  <section class="hero" id="recherche">
-    <h1>Trouver un centre, une clinique ou une association d'addictologie en Île-de-France</h1>
-    <p class="lede">Un annuaire gratuit, classé par mode de prise en charge, par public concerné et par ville, pour que vous n'ayez pas à chercher seul·e au moment où c'est le plus difficile. Cette sélection couvre aujourd'hui Paris, les Hauts-de-Seine, les Yvelines, l'Essonne, la Seine-Saint-Denis, le Val-d'Oise et la Seine-et-Marne, et s'étend progressivement au reste de la France.</p>
-
-    <div class="panel">
-      <div class="panel-row">
-        <span class="label">Type de prise en charge</span>
-        <div class="chip-group" id="modeFilters">
-          <button class="chip" type="button" aria-pressed="true" data-mode="tous">Toutes</button>
-          <button class="chip" type="button" aria-pressed="false" data-mode="ambulatoire">À domicile / suivi externe</button>
-          <button class="chip" type="button" aria-pressed="false" data-mode="hospitalisation">Hospitalisation / internement</button>
-        </div>
-      </div>
-
-      <div class="panel-row">
-        <span class="label">La demande concerne</span>
-        <div class="chip-group" id="publicFilters">
-          <button class="chip" type="button" aria-pressed="false" data-public="moi">Moi-même</button>
-          <button class="chip" type="button" aria-pressed="false" data-public="proche">Un proche</button>
-        </div>
-      </div>
-
-      <div class="panel-row">
-        <span class="label">Je me situe</span>
-        <div class="search-row">
-          <input type="text" id="cityInput" list="villes" placeholder="Votre ville ou votre département (ex : Nanterre, 78, Paris 17e)">
-          <datalist id="villes"></datalist>
-          <button class="reset-btn" type="button" id="resetBtn">Réinitialiser les filtres</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="results-head">
-      <h2>Structures correspondant à votre recherche</h2>
-      <span id="resultCount"></span>
-    </div>
-
-    <div class="grid" id="resultsGrid"></div>
+  <section id="recherche"><div class="herocard">
+<h1>Vous n'êtes pas seul·e : trouvez de l'aide près de chez vous, partout en France</h1>
+<p class="lede">Centres de soins, hôpitaux, associations et lignes d'écoute, pour vous ou pour un proche. Gratuit, confidentiel, sans jugement.</p>
+<div class="panel">
+<div class="panel-row"><span class="label">Pour qui ?</span><div class="chip-group" id="audFilters"><button class="chip" type="button" aria-pressed="true" data-v="moi">Pour moi</button><button class="chip" type="button" aria-pressed="false" data-v="proche">Pour un proche</button><button class="chip" type="button" aria-pressed="false" data-v="jeune">Jeune (12-25 ans)</button></div></div>
+<div class="panel-row"><span class="label">Type de besoin</span><div class="chip-group" id="besoinFilters"><button class="chip" type="button" aria-pressed="false" data-v="alcool">Alcool</button><button class="chip" type="button" aria-pressed="false" data-v="drogues">Cannabis / Drogues</button><button class="chip" type="button" aria-pressed="false" data-v="medic">Médicaments</button><button class="chip" type="button" aria-pressed="false" data-v="ecrans">Écrans / Jeux</button><button class="chip" type="button" aria-pressed="false" data-v="tabac">Tabac</button><button class="chip" type="button" aria-pressed="false" data-v="proches">Soutien aux proches</button></div></div>
+<div class="panel-row"><span class="label">Mode de prise en charge</span><div class="chip-group" id="modeFilters"><button class="chip" type="button" aria-pressed="false" data-v="sans">Sans RDV / Urgence</button><button class="chip" type="button" aria-pressed="false" data-v="rdv">Consultation sur RDV</button><button class="chip" type="button" aria-pressed="false" data-v="hospi">Hospitalisation / Cure</button></div></div>
+<div class="panel-row"><span class="label">Où ?</span><div class="search-row"><input type="text" id="cityInput" placeholder="Ville ou code postal"><button class="cta" type="button" id="searchBtn">Rechercher</button></div>
+<button class="link-reset" type="button" id="resetBtn">Réinitialiser les filtres</button></div>
+</div>
+<p class="note">Couverture actuelle : Île-de-France, avec une extension progressive au reste de la France. Les lignes d'écoute répondent partout.</p></div>
+<div class="results-head" id="resultsHead" style="display:none"><h2 id="resultsTitle">Structures</h2><span id="resultCount"></span></div>
+<div class="grid" id="resultsGrid"></div>
   </section>
 
   <section id="monEspace" style="display:none; margin-top:56px;">
@@ -447,7 +190,7 @@
   </section>
 
   <section class="faq" id="faq">
-    <h2>Questions fréquentes</h2>
+    <h2>Centre d'aide : questions fréquentes</h2>
     <details class="faq-item" open>
       <summary>La prise en charge en addictologie est-elle gratuite ?</summary>
       <p>Les CSAPA, CAARUD et lignes d'écoute nationales sont gratuits et anonymes. Une hospitalisation en établissement public est prise en charge par l'Assurance Maladie ; des frais peuvent exister en clinique privée, à vérifier directement auprès de l'établissement.</p>
@@ -480,7 +223,7 @@
       <a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a> · <a href="#">Nous signaler une erreur</a></p>
     </div>
     <div>
-      <p>Dernière mise à jour : 14 septembre 2026<br>Île-de-France — prochainement : autres régions</p>
+      <p>Dernière mise à jour : 14 septembre 2026<br>Couverture actuelle : Île-de-France, extension à toute la France en cours</p>
     </div>
   </div>
 </footer>
@@ -498,12 +241,12 @@
    et affiche un message d'information à la place d'une erreur.
    ============================================================ */
 const firebaseConfig = {
-  apiKey: "VOTRE_API_KEY",
-  authDomain: "VOTRE_PROJET.firebaseapp.com",
-  projectId: "VOTRE_PROJET",
-  storageBucket: "VOTRE_PROJET.appspot.com",
-  messagingSenderId: "VOTRE_SENDER_ID",
-  appId: "VOTRE_APP_ID"
+  apiKey: "AIzaSyB7UdWyoykuMtRN9CibVIMyptsHliHoGvo",
+  authDomain: "annuaire-addictologie.firebaseapp.com",
+  projectId: "annuaire-addictologie",
+  storageBucket: "annuaire-addictologie.firebasestorage.app",
+  messagingSenderId: "879222562150",
+  appId: "1:879222562150:web:7598df2b09ee6dd8ae7ca7"
 };
 
 const firebaseReady = firebaseConfig.apiKey !== "VOTRE_API_KEY";
@@ -724,618 +467,1803 @@ document.getElementById('addDocBtn').addEventListener('click', () => {
    mode: "ambulatoire" et/ou "hospitalisation"
    pub: "moi" et/ou "proche" */
 const structures = [
-  {
-    nom: "Hôpital Marmottan — Centre médical (CSAPA)",
-    type: "CSAPA hospitalier",
-    ville: "Paris 17e", dept: "75",
-    adresse: "17-19 rue d'Armaillé, 75017 Paris",
-    tel: "01 56 68 70 30",
-    site: "https://www.hopital-marmottan.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultations d'addictologie anonymes et gratuites, toutes addictions hors alcool isolé. Reçoit aussi l'entourage sans rendez-vous préalable de la personne concernée."
-  },
-  {
-    nom: "Hôpital Marmottan — Unité d'hospitalisation en addictologie",
-    type: "Hôpital", ville: "Paris 17e", dept: "75",
-    adresse: "17-19 rue d'Armaillé, 75017 Paris",
-    tel: "01 56 68 70 24",
-    site: "https://www.hopital-marmottan.fr",
-    mode: ["hospitalisation"], pub: ["moi"],
-    desc: "Hospitalisation sur indication médicale après plusieurs entretiens préalables avec l'équipe. Prise de contact par téléphone."
-  },
-  {
-    nom: "CSAPA Espace Murger — Hôpital Fernand-Widal (AP-HP)",
-    type: "CSAPA hospitalier", ville: "Paris 10e", dept: "75",
-    adresse: "200 rue du Faubourg-Saint-Denis, 75010 Paris",
-    tel: "01 40 05 42 14",
-    site: "https://hopital-lariboisiere.aphp.fr/csapa-espace-murger-fernand-widal",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultations confidentielles et anonymes sur rendez-vous, suivi de traitement de substitution, prise en charge du chemsex."
-  },
-  {
-    nom: "Unité de soins en addictologie (MA2) — Hôpital Fernand-Widal",
-    type: "Hôpital", ville: "Paris 10e", dept: "75",
-    adresse: "200 rue du Faubourg-Saint-Denis, 75010 Paris",
-    tel: "01 40 05 42 01",
-    site: "https://www.aphp.fr/fernand-widal/service-de-medecine-addictologique",
-    mode: ["hospitalisation"], pub: ["moi"],
-    desc: "Sevrage hospitalier (alcool, drogues, médicaments), une à plusieurs semaines. Admission sur indication médicale, demande par mail au secrétariat."
-  },
-  {
-    nom: "CSAPA Le Trait d'Union (Oppelia)",
-    type: "CSAPA associatif", ville: "Boulogne-Billancourt", dept: "92",
-    adresse: "4 rue Neuve Saint-Germain, 92100 Boulogne-Billancourt",
-    tel: "01 41 41 98 01",
-    site: "https://www.oppelia.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Accompagnement médico-psycho-social gratuit et anonyme, géré par l'association Oppelia."
-  },
-  {
-    nom: "CSAPA Arthur Rimbaud (CH des 4 Villes)",
-    type: "CSAPA hospitalier", ville: "Boulogne-Billancourt", dept: "92",
-    adresse: "13 bis rue Rieux, 92100 Boulogne-Billancourt",
-    tel: "01 77 70 75 87",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie rattaché au Centre Hospitalier des 4 Villes."
-  },
-  {
-    nom: "CSAPA APORIA",
-    type: "CSAPA associatif", ville: "Nanterre", dept: "92",
-    adresse: "15 rue des Goulvents, 92000 Nanterre",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste. Contact conseillé via le site de l'Hôpital de Nanterre avant de vous déplacer."
-  },
-  {
-    nom: "Service d'addictologie — Hôpital Corentin Celton (AP-HP)",
-    type: "Hôpital", ville: "Issy-les-Moulineaux", dept: "92",
-    adresse: "4 parvis Corentin Celton, 92130 Issy-les-Moulineaux",
-    tel: "",
-    site: "",
-    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
-    desc: "Suivi ambulatoire hospitalier et sevrages simples, en lien avec le service d'hospitalisation."
-  },
-  {
-    nom: "CSAPA du Centre Hospitalier de Versailles",
-    type: "CSAPA hospitalier", ville: "Versailles", dept: "78",
-    adresse: "55 rue du Maréchal Foch, Maison d'Espagne, 78000 Versailles",
-    tel: "01 39 63 95 00",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Antenne principale du CSAPA du Centre Hospitalier de Versailles."
-  },
-  {
-    nom: "CSAPA du CHV — antenne de Trappes",
-    type: "CSAPA hospitalier", ville: "Trappes", dept: "78",
-    adresse: "Place de la Mairie, Institut de Promotion de la Santé (2e ét.), 78190 Trappes",
-    tel: "01 30 69 98 18",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Antenne locale du CSAPA du Centre Hospitalier de Versailles."
-  },
-  {
-    nom: "CSAPA de Saint-Germain-en-Laye",
-    type: "CSAPA", ville: "Saint-Germain-en-Laye", dept: "78",
-    adresse: "8 bis rue d'Ourches, 78100 Saint-Germain-en-Laye",
-    tel: "01 30 87 94 95",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Accueil, évaluation et accompagnement en addictologie, gratuit et anonyme."
-  },
-  {
-    nom: "CSAPA de Mantes-la-Jolie",
-    type: "CSAPA", ville: "Mantes-la-Jolie", dept: "78",
-    adresse: "122 boulevard Carnot, 78200 Mantes-la-Jolie",
-    tel: "01 30 63 77 90",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du Mantois."
-  },
-  {
-    nom: "CAARUD Sida Paroles",
-    type: "CAARUD", ville: "Mantes-la-Jolie", dept: "78",
-    adresse: "26 rue de Gassicourt, 78200 Mantes-la-Jolie",
-    tel: "01 34 97 97 70",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi"],
-    desc: "Accueil à bas seuil et réduction des risques, sans obligation d'engager un soin."
-  },
-  {
-    nom: "CSAPA Essonne Accueil",
-    type: "CSAPA", ville: "Évry-Courcouronnes", dept: "91",
-    adresse: "Évry (91034)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "CSAPA généraliste de l'agglomération Évry Centre Essonne. Adresse précise à confirmer avant déplacement."
-  },
-  {
-    nom: "CSAPA spécialisé alcool d'Évry",
-    type: "CSAPA", ville: "Évry-Courcouronnes", dept: "91",
-    adresse: "Évry (91000)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool."
-  },
-  {
-    nom: "CSAPA généraliste d'Arpajon",
-    type: "CSAPA", ville: "Arpajon", dept: "91",
-    adresse: "Arpajon (91290)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste."
-  },
-  {
-    nom: "CSAPA généraliste d'Athis-Mons",
-    type: "CSAPA", ville: "Athis-Mons", dept: "91",
-    adresse: "Athis-Mons (91200)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste."
-  },
-  {
-    nom: "CSAPA spécialisé alcool d'Orsay",
-    type: "CSAPA", ville: "Orsay", dept: "91",
-    adresse: "Orsay (91400)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool."
-  },
-  {
-    nom: "CSAPA généraliste Fleury Mérogis",
-    type: "CSAPA", ville: "Sainte-Geneviève-des-Bois", dept: "91",
-    adresse: "Sainte-Geneviève-des-Bois (91700)",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste."
-  },
-  {
-    nom: "CSAPA Le Chat",
-    type: "CSAPA municipal", ville: "Saint-Denis", dept: "93",
-    adresse: "6 rue du Cygne (CMS du Cygne), 93200 Saint-Denis",
-    tel: "01 83 72 20 23",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Accueil, orientation et soins pour les personnes en difficulté avec une conduite addictive, ouvert à l'entourage. Ateliers thérapeutiques et groupes de parole."
-  },
-  {
-    nom: "CSAPA Le Corbillon — Hôpital Delafontaine",
-    type: "CSAPA hospitalier", ville: "Saint-Denis", dept: "93",
-    adresse: "2 rue du Docteur Delafontaine, 93200 Saint-Denis",
-    tel: "",
-    site: "https://www.ch-stdenis.fr",
-    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
-    desc: "Accompagnement des addictions aux opiacés, cocaïne et cannabis, traitements de substitution. Sevrages ambulatoires et hospitaliers en lien avec l'équipe de liaison de l'hôpital."
-  },
-  {
-    nom: "CSAPA — antenne de Stains",
-    type: "CSAPA municipal", ville: "Stains", dept: "93",
-    adresse: "27-33 boulevard Maxime-Gorki (CMS Colette Coulon), 93240 Stains",
-    tel: "01 49 71 40 35",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Antenne de proximité du CSAPA de Saint-Denis, à quelques kilomètres d'Épinay-sur-Seine."
-  },
-  {
-    nom: "CSAPA d'Aubervilliers",
-    type: "CSAPA municipal", ville: "Aubervilliers", dept: "93",
-    adresse: "5 rue du Docteur Pesqué (Centre Municipal de Santé), 93300 Aubervilliers",
-    tel: "01 48 11 21 90",
-    site: "https://www.aubervilliers.fr/Centre-de-soins-accompagnement-prevention-en-addictologie",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultations pour toutes addictions avec ou sans substance, consultation dédiée à l'entourage (individuel, couple, famille), consultation jeunes consommateurs dès 13 ans."
-  },
-  {
-    nom: "CSAPA PASS (Association CaPASSCité)",
-    type: "CSAPA associatif", ville: "Montreuil", dept: "93",
-    adresse: "15 avenue de la Résistance, 93100 Montreuil",
-    tel: "",
-    site: "https://www.doctolib.fr/centre-soins-accompagnement-prevention-addictologie/montreuil/centre-de-soin-d-accompagnement-et-de-prevention-en-addictologie-csapa-pass-association-capasscite",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins, d'accompagnement et de prévention en addictologie. Prise de rendez-vous en ligne possible."
-  },
-  {
-    nom: "CSAPA d'Argenteuil (Association Addictions France)",
-    type: "CSAPA associatif", ville: "Argenteuil", dept: "95",
-    adresse: "12 boulevard Maurice Berteaux, 95100 Argenteuil",
-    tel: "01 30 76 30 13",
-    site: "https://addictions-france.org/etablissements/csapa-argenteuil/",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Structure ambassadrice du programme « Moi(s) sans tabac ». À quelques minutes d'Épinay-sur-Seine, de l'autre côté de la Seine."
-  },
-  {
-    nom: "CSAPA AGATA — Gennevilliers",
-    type: "CSAPA associatif", ville: "Gennevilliers", dept: "92",
-    adresse: "34 rue Pierre Timbaud, 92230 Gennevilliers",
-    tel: "",
-    site: "https://www.agata-asso.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste. Contact conseillé par le site de l'association avant de vous déplacer."
-  },
-  {
-    nom: "CSAPA AGATA — Rueil-Malmaison",
-    type: "CSAPA associatif", ville: "Rueil-Malmaison", dept: "92",
-    adresse: "9 avenue Beauséjour, 92500 Rueil-Malmaison",
-    tel: "",
-    site: "https://www.agata-asso.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Antenne de l'association AGATA, qui couvre aussi Colombes, Asnières et Villeneuve-la-Garenne."
-  },
-  {
-    nom: "CSAPA Nord 92 — Centre Victor Segalen",
-    type: "CSAPA hospitalier", ville: "Villeneuve-la-Garenne", dept: "92",
-    adresse: "75 avenue de Verdun, 92390 Villeneuve-la-Garenne",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie rattaché à l'Hôpital Nord 92."
-  },
-  {
-    nom: "CSAPA Le Carrousel — GHSIF",
-    type: "CSAPA hospitalier", ville: "Melun", dept: "77",
-    adresse: "7 place Praslin, 77000 Melun",
-    tel: "01 81 74 28 40",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Accueil des usagers de drogues, médicaments, addictions sans substance (jeux vidéo, jeux d'argent) et de leur entourage. Consultation jeunes consommateurs sur place."
-  },
-  {
-    nom: "Unité d'addictologie — GHSIF Melun (ELSA)",
-    type: "Hôpital", ville: "Melun", dept: "77",
-    adresse: "270 avenue Marc Jacquet, 77000 Melun",
-    tel: "01 81 74 17 17",
-    site: "",
-    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
-    desc: "Équipe de liaison et de soins en addictologie de l'hôpital, en lien avec les sevrages hospitaliers."
-  },
-  {
-    nom: "CSAPA Hevea",
-    type: "CSAPA hospitalier", ville: "Meaux", dept: "77",
-    adresse: "6-8 rue Saint-Fiacre, 77100 Meaux",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du Grand Hôpital de l'Est Francilien. Numéro à confirmer directement auprès de l'accueil de l'hôpital."
-  },
-  {
-    nom: "CSAPA de Provins",
-    type: "CSAPA", ville: "Provins", dept: "77",
-    adresse: "1 rue Saint-Thibault, 77160 Provins",
-    tel: "01 60 52 07 73",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie pour l'est de la Seine-et-Marne."
-  },
-  {
-    nom: "CSAPA de Cergy-Pontoise (Association Addictions France)",
-    type: "CSAPA associatif", ville: "Cergy", dept: "95",
-    adresse: "18 boulevard de la Paix, Immeuble Buroplus, 95800 Cergy",
-    tel: "01 30 30 50 96",
-    site: "https://addictions-france.org/etablissements/csapa-cergy-pontoise/",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultations sur rendez-vous, confidentielles et gratuites, pour les personnes concernées et leur entourage."
-  },
-  {
-    nom: "CSAPA Oppelia Rivage",
-    type: "CSAPA associatif", ville: "Sarcelles", dept: "95",
-    adresse: "18 avenue du 8 mai 1945, 95200 Sarcelles",
-    tel: "",
-    site: "https://www.oppelia.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins, d'accompagnement et de prévention en addictologie du réseau Oppelia."
-  },
-  {
-    nom: "Réseau PASS — CSAPA Garges-lès-Gonesse",
-    type: "CSAPA", ville: "Garges-lès-Gonesse", dept: "95",
-    adresse: "36-44 avenue Frédéric Joliot Curie, 95140 Garges-lès-Gonesse",
-    tel: "",
-    site: "https://rvh-synergie.org",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et d'insertion en addictologie, dessert l'est du Val-d'Oise."
-  },
-  {
-    nom: "Hôpital de jour d'addictologie — Hôpital Simone Veil",
-    type: "Hôpital", ville: "Eaubonne", dept: "95",
-    adresse: "14 rue de Saint-Prix, 95600 Eaubonne",
-    tel: "01 34 06 62 27",
-    site: "https://www.hopital-simoneveil.fr/services/addictologie/",
-    mode: ["hospitalisation"], pub: ["moi"],
-    desc: "Prise en charge des troubles de l'usage d'alcool en hôpital de jour : sevrage, consolidation du sevrage, aide au maintien de l'abstinence, ateliers thérapeutiques."
-  },
-  {
-    nom: "CSAPA Imagine — Groupement Hospitalier Eaubonne-Montmorency",
-    type: "CSAPA hospitalier", ville: "Ermont", dept: "95",
-    adresse: "1 rue Saint-Flaive Prolongée, 95120 Ermont",
-    tel: "01 39 89 17 49",
-    site: "https://www.hopital-simoneveil.fr/services/centre-imagine/",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "CSAPA ambulatoire avec unité méthadone, à 5 minutes d'Eaubonne. Consultation jeunes consommateurs pour les moins de 25 ans, avec ou sans entourage."
-  },
-  {
-    nom: "Service de psychiatrie-addictologie — Hôpital Louis-Mourier (AP-HP)",
-    type: "Hôpital", ville: "Colombes", dept: "92",
-    adresse: "178 rue des Renouillers, 92700 Colombes",
-    tel: "01 47 60 65 30",
-    site: "https://hopital-louis-mourier.aphp.fr/psychiatrie-addictologie-beaujon/",
-    mode: ["hospitalisation","ambulatoire"], pub: ["moi"],
-    desc: "Unité d'hospitalisation en addictologie (8 lits) et équipe de liaison (ELSA) qui accompagne aussi les patients hospitalisés dans les autres services de l'hôpital."
-  },
-  {
-    nom: "UTAMA — Hôpital Beaujon (AP-HP)",
-    type: "Hôpital", ville: "Clichy", dept: "92",
-    adresse: "100 boulevard du Général Leclerc, 92110 Clichy",
-    tel: "01 40 87 58 84",
-    site: "https://www.aphp.fr/service/service-34-005",
-    mode: ["ambulatoire"], pub: ["moi"],
-    desc: "Unité de Traitement Ambulatoire des Maladies Addictives. Secteur : Clichy, Asnières, Courbevoie, Puteaux, Paris 17e et 18e. Consultations sur rendez-vous, gratuites."
-  },
-  {
-    nom: "CSAPA — Hôpital Jean-Verdier (AP-HP)",
-    type: "CSAPA hospitalier", ville: "Bondy", dept: "93",
-    adresse: "Avenue du 14 Juillet, Hôpital Jean-Verdier, 93140 Bondy",
-    tel: "01 48 95 59 33",
-    site: "https://chu93.aphp.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultation jeunes consommateurs (13-25 ans) en lien avec la Maison des Adolescents Casita de l'hôpital Avicenne."
-  },
-  {
-    nom: "Unité d'addictologie — Hôpital René-Muret (AP-HP)",
-    type: "Hôpital", ville: "Sevran", dept: "93",
-    adresse: "Avenue du Docteur Schaeffner, 93270 Sevran",
-    tel: "01 41 52 56 74",
-    site: "https://chu93.aphp.fr",
-    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
-    desc: "Depuis janvier 2026, filière spécialisée dans la prise en charge des usages détournés du protoxyde d'azote, en plus du suivi addictologique général."
-  },
-  {
-    nom: "Service d'addictologie — Hôpital Paul-Brousse (AP-HP)",
-    type: "Hôpital", ville: "Villejuif", dept: "94",
-    adresse: "Bâtiment Moreau-de-Tours, Hôpital Paul-Brousse, 94800 Villejuif",
-    tel: "01 45 59 32 60",
-    site: "",
-    mode: ["ambulatoire","hospitalisation"], pub: ["moi"],
-    desc: "Un des services de référence en addictologie en France (alcool, tabac, drogues), consultations et hospitalisations selon indication médicale."
-  },
-  {
-    nom: "CSAPA Regain — Hôpital Saint-Camille",
-    type: "CSAPA hospitalier", ville: "Bry-sur-Marne", dept: "94",
-    adresse: "Hôpital Saint-Camille, 94360 Bry-sur-Marne",
-    tel: "01 49 83 10 01",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie pour l'est du Val-de-Marne."
-  },
-  {
-    nom: "CSAPA Verlaine / Littoral",
-    type: "CSAPA", ville: "Villeneuve-Saint-Georges", dept: "94",
-    adresse: "Villeneuve-Saint-Georges (94190)",
-    tel: "01 43 82 58 38",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie pour le sud du Val-de-Marne."
-  },
-  {
-    nom: "CSAPA UDSM Meltem 94 — Centre Thérapeutique Résidentiel",
-    type: "CSAPA associatif", ville: "Champigny-sur-Marne", dept: "94",
-    adresse: "17 avenue de l'Épargne, 94500 Champigny-sur-Marne",
-    tel: "01 41 77 40 30",
-    site: "https://www.udsm-asso.fr",
-    mode: ["ambulatoire","hospitalisation"], pub: ["moi","proche"],
-    desc: "Dispose d'un Centre Thérapeutique Résidentiel ouvert 24h/24, 7j/7, en plus d'un accueil de jour et de la délivrance de traitements de substitution."
-  },
-  {
-    nom: "CSAPA de Villejuif",
-    type: "CSAPA", ville: "Villejuif", dept: "94",
-    adresse: "9 rue Georges Bizet, 94800 Villejuif",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Centre de soins et de prévention en addictologie généraliste. Numéro à confirmer directement auprès du centre."
-  },
-  {
-    nom: "CSAPA d'Ivry-sur-Seine",
-    type: "CSAPA hospitalier", ville: "Ivry-sur-Seine", dept: "94",
-    adresse: "64 avenue Georges Gosnat, 94200 Ivry-sur-Seine",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Établissement public départemental d'hospitalisation, centre de soins et de prévention en addictologie."
-  },
-  {
-    nom: "CSAPA d'Aulnay-sous-Bois",
-    type: "CSAPA municipal", ville: "Aulnay-sous-Bois", dept: "93",
-    adresse: "2 rue du Limousin, 93600 Aulnay-sous-Bois",
-    tel: "",
-    site: "",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Consultations en tabacologie, soutien psychologique et social, bilans de santé. Numéro à confirmer directement auprès du centre."
-  },
-  {
-    nom: "Association Charonne (Oppelia)",
-    type: "Association", ville: "Paris 13e", dept: "75",
-    adresse: "Paris (75013)",
-    tel: "",
-    site: "https://www.oppelia.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Accompagnement social et sanitaire des personnes en difficulté avec leurs consommations."
-  },
-  {
-    nom: "Al-Anon / Alateen — Groupes familiaux",
-    type: "Groupe d'entraide", ville: "Versailles (siège) + réunions dans toute l'Île-de-France", dept: "78",
-    adresse: "24 rue du Maréchal Joffre, 78000 Versailles",
-    tel: "09 69 39 40 20",
-    site: "https://al-anon.fr",
-    mode: ["ambulatoire"], pub: ["proche"],
-    desc: "Réunions gratuites, anonymes, sans inscription, pour toute personne affectée par la consommation d'alcool d'un proche."
-  },
-  {
-    nom: "Nar-Anon France — Groupes familiaux",
-    type: "Groupe d'entraide", ville: "Réunions en Île-de-France", dept: "IDF",
-    adresse: "",
-    tel: "",
-    site: "https://nar-anon.org/france/",
-    mode: ["ambulatoire"], pub: ["proche"],
-    desc: "Groupes d'entraide en 12 étapes pour les proches de personnes dépendantes aux drogues."
-  },
-  {
-    nom: "Drogues Info Service",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "0 800 23 13 13",
-    site: "https://www.drogues-info-service.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Écoute, information et orientation, anonyme et gratuit, 8h–2h, 7j/7. Tchat disponible sur le site."
-  },
-  {
-    nom: "Alcool Info Service",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "0 980 980 930",
-    site: "https://www.alcool-info-service.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Écoute et orientation autour de l'alcool, gratuit et non surtaxé, 8h–2h, 7j/7."
-  },
-  {
-    nom: "Tabac Info Service",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "39 89",
-    site: "https://www.tabac-info-service.fr",
-    mode: ["ambulatoire"], pub: ["moi"],
-    desc: "Conseils de tabacologues pour l'arrêt du tabac, du lundi au samedi, 8h–20h."
-  },
-  {
-    nom: "Joueurs Info Service",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "09 74 75 13 13",
-    site: "https://www.joueurs-info-service.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Écoute et orientation autour des jeux d'argent et de hasard, anonyme, 8h–2h, 7j/7."
-  },
-  {
-    nom: "Écoute Cannabis",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "0 980 980 940",
-    site: "https://www.drogues-info-service.fr",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Ligne dédiée aux questions sur le cannabis, anonyme et gratuite, 8h–2h, 7j/7."
-  },
-  {
-    nom: "Fil Santé Jeunes",
-    type: "Ligne d'écoute nationale", ville: "Par téléphone, partout en IDF", dept: "National",
-    adresse: "",
-    tel: "0 800 235 236",
-    site: "https://www.filsantejeunes.com",
-    mode: ["ambulatoire"], pub: ["moi","proche"],
-    desc: "Écoute généraliste pour les jeunes (santé, addictions, mal-être), anonyme et gratuite."
-  }
+ {
+  "nom": "Hôpital Marmottan — Centre médical (CSAPA)",
+  "type": "CSAPA hospitalier",
+  "ville": "Paris 17e",
+  "dept": "75",
+  "adresse": "17-19 rue d'Armaillé, 75017 Paris",
+  "tel": "01 56 68 70 30",
+  "site": "https://www.hopital-marmottan.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultations d'addictologie anonymes et gratuites, toutes addictions hors alcool isolé. Reçoit aussi l'entourage sans rendez-vous préalable de la personne concernée.",
+  "besoins": [
+   "drogues",
+   "medic",
+   "ecrans",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.887,
+  "lon": 2.307,
+  "id": "hopital-marmottan-centre-medical-csapa-paris-17e",
+  "lieu": "Paris 17e"
+ },
+ {
+  "nom": "Hôpital Marmottan — Unité d'hospitalisation en addictologie",
+  "type": "Hôpital",
+  "ville": "Paris 17e",
+  "dept": "75",
+  "adresse": "17-19 rue d'Armaillé, 75017 Paris",
+  "tel": "01 56 68 70 24",
+  "site": "https://www.hopital-marmottan.fr",
+  "mode": [
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Hospitalisation sur indication médicale après plusieurs entretiens préalables avec l'équipe. Prise de contact par téléphone.",
+  "besoins": [
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.887,
+  "lon": 2.307,
+  "id": "hopital-marmottan-unite-d-hospitalisation-en-addictologie-paris-17e",
+  "lieu": "Paris 17e"
+ },
+ {
+  "nom": "CSAPA Espace Murger — Hôpital Fernand-Widal (AP-HP)",
+  "type": "CSAPA hospitalier",
+  "ville": "Paris 10e",
+  "dept": "75",
+  "adresse": "200 rue du Faubourg-Saint-Denis, 75010 Paris",
+  "tel": "01 40 05 42 14",
+  "site": "https://hopital-lariboisiere.aphp.fr/csapa-espace-murger-fernand-widal",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultations confidentielles et anonymes sur rendez-vous, suivi de traitement de substitution, prise en charge du chemsex.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.876,
+  "lon": 2.36,
+  "id": "csapa-espace-murger-hopital-fernand-widal-ap-hp-paris-10e",
+  "lieu": "Paris 10e"
+ },
+ {
+  "nom": "Unité de soins en addictologie (MA2) — Hôpital Fernand-Widal",
+  "type": "Hôpital",
+  "ville": "Paris 10e",
+  "dept": "75",
+  "adresse": "200 rue du Faubourg-Saint-Denis, 75010 Paris",
+  "tel": "01 40 05 42 01",
+  "site": "https://www.aphp.fr/fernand-widal/service-de-medecine-addictologique",
+  "mode": [
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Sevrage hospitalier (alcool, drogues, médicaments), une à plusieurs semaines. Admission sur indication médicale, demande par mail au secrétariat.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.876,
+  "lon": 2.36,
+  "id": "unite-de-soins-en-addictologie-ma2-hopital-fernand-widal-paris-10e",
+  "lieu": "Paris 10e"
+ },
+ {
+  "nom": "CSAPA Le Trait d'Union (Oppelia)",
+  "type": "CSAPA associatif",
+  "ville": "Boulogne-Billancourt",
+  "dept": "92",
+  "adresse": "4 rue Neuve Saint-Germain, 92100 Boulogne-Billancourt",
+  "tel": "01 41 41 98 01",
+  "site": "https://www.oppelia.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accompagnement médico-psycho-social gratuit et anonyme, géré par l'association Oppelia.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.835,
+  "lon": 2.24,
+  "id": "csapa-le-trait-d-union-oppelia-boulogne-billancourt",
+  "lieu": "Boulogne-Billancourt"
+ },
+ {
+  "nom": "CSAPA Arthur Rimbaud (CH des 4 Villes)",
+  "type": "CSAPA hospitalier",
+  "ville": "Boulogne-Billancourt",
+  "dept": "92",
+  "adresse": "13 bis rue Rieux, 92100 Boulogne-Billancourt",
+  "tel": "01 77 70 75 87",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie rattaché au Centre Hospitalier des 4 Villes.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.835,
+  "lon": 2.24,
+  "id": "csapa-arthur-rimbaud-ch-des-4-villes-boulogne-billancourt",
+  "lieu": "Boulogne-Billancourt"
+ },
+ {
+  "nom": "CSAPA APORIA",
+  "type": "CSAPA associatif",
+  "ville": "Nanterre",
+  "dept": "92",
+  "adresse": "15 rue des Goulvents, 92000 Nanterre",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste. Contact conseillé via le site de l'Hôpital de Nanterre avant de vous déplacer.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.892,
+  "lon": 2.207,
+  "id": "csapa-aporia-nanterre",
+  "lieu": "Nanterre"
+ },
+ {
+  "nom": "Service d'addictologie — Hôpital Corentin Celton (AP-HP)",
+  "type": "Hôpital",
+  "ville": "Issy-les-Moulineaux",
+  "dept": "92",
+  "adresse": "4 parvis Corentin Celton, 92130 Issy-les-Moulineaux",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "hospitalisation",
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Suivi ambulatoire hospitalier et sevrages simples, en lien avec le service d'hospitalisation.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.824,
+  "lon": 2.27,
+  "id": "service-d-addictologie-hopital-corentin-celton-ap-hp-issy-les-moulinea",
+  "lieu": "Issy-les-Moulineaux"
+ },
+ {
+  "nom": "CSAPA du Centre Hospitalier de Versailles",
+  "type": "CSAPA hospitalier",
+  "ville": "Versailles",
+  "dept": "78",
+  "adresse": "55 rue du Maréchal Foch, Maison d'Espagne, 78000 Versailles",
+  "tel": "01 39 63 95 00",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Antenne principale du CSAPA du Centre Hospitalier de Versailles.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.805,
+  "lon": 2.13,
+  "id": "csapa-du-centre-hospitalier-de-versailles-versailles",
+  "lieu": "Versailles"
+ },
+ {
+  "nom": "CSAPA du CHV — antenne de Trappes",
+  "type": "CSAPA hospitalier",
+  "ville": "Trappes",
+  "dept": "78",
+  "adresse": "Place de la Mairie, Institut de Promotion de la Santé (2e ét.), 78190 Trappes",
+  "tel": "01 30 69 98 18",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Antenne locale du CSAPA du Centre Hospitalier de Versailles.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.775,
+  "lon": 2.005,
+  "id": "csapa-du-chv-antenne-de-trappes-trappes",
+  "lieu": "Trappes"
+ },
+ {
+  "nom": "CSAPA de Saint-Germain-en-Laye",
+  "type": "CSAPA",
+  "ville": "Saint-Germain-en-Laye",
+  "dept": "78",
+  "adresse": "8 bis rue d'Ourches, 78100 Saint-Germain-en-Laye",
+  "tel": "01 30 87 94 95",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accueil, évaluation et accompagnement en addictologie, gratuit et anonyme.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.899,
+  "lon": 2.094,
+  "id": "csapa-de-saint-germain-en-laye-saint-germain-en-laye",
+  "lieu": "Saint-Germain-en-Laye"
+ },
+ {
+  "nom": "CSAPA de Mantes-la-Jolie",
+  "type": "CSAPA",
+  "ville": "Mantes-la-Jolie",
+  "dept": "78",
+  "adresse": "122 boulevard Carnot, 78200 Mantes-la-Jolie",
+  "tel": "01 30 63 77 90",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins, d'accompagnement et de prévention en addictologie du Mantois.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.99,
+  "lon": 1.717,
+  "id": "csapa-de-mantes-la-jolie-mantes-la-jolie",
+  "lieu": "Mantes-la-Jolie"
+ },
+ {
+  "nom": "CAARUD Sida Paroles",
+  "type": "CAARUD",
+  "ville": "Mantes-la-Jolie",
+  "dept": "78",
+  "adresse": "26 rue de Gassicourt, 78200 Mantes-la-Jolie",
+  "tel": "01 34 97 97 70",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Accueil à bas seuil et réduction des risques, sans obligation d'engager un soin.",
+  "besoins": [
+   "drogues"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": 48.99,
+  "lon": 1.717,
+  "id": "caarud-sida-paroles-mantes-la-jolie",
+  "lieu": "Mantes-la-Jolie"
+ },
+ {
+  "nom": "CSAPA Essonne Accueil",
+  "type": "CSAPA",
+  "ville": "Évry-Courcouronnes",
+  "dept": "91",
+  "adresse": "Évry (91034)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "CSAPA généraliste de l'agglomération Évry Centre Essonne. Adresse précise à confirmer avant déplacement.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.629,
+  "lon": 2.443,
+  "id": "csapa-essonne-accueil-evry-courcouronnes",
+  "lieu": "Évry-Courcouronnes"
+ },
+ {
+  "nom": "CSAPA spécialisé alcool d'Évry",
+  "type": "CSAPA",
+  "ville": "Évry-Courcouronnes",
+  "dept": "91",
+  "adresse": "Évry (91000)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool.",
+  "besoins": [
+   "alcool",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.629,
+  "lon": 2.443,
+  "id": "csapa-specialise-alcool-d-evry-evry-courcouronnes",
+  "lieu": "Évry-Courcouronnes"
+ },
+ {
+  "nom": "CSAPA généraliste d'Arpajon",
+  "type": "CSAPA",
+  "ville": "Arpajon",
+  "dept": "91",
+  "adresse": "Arpajon (91290)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.59,
+  "lon": 2.246,
+  "id": "csapa-generaliste-d-arpajon-arpajon",
+  "lieu": "Arpajon"
+ },
+ {
+  "nom": "CSAPA généraliste d'Athis-Mons",
+  "type": "CSAPA",
+  "ville": "Athis-Mons",
+  "dept": "91",
+  "adresse": "Athis-Mons (91200)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.708,
+  "lon": 2.391,
+  "id": "csapa-generaliste-d-athis-mons-athis-mons",
+  "lieu": "Athis-Mons"
+ },
+ {
+  "nom": "CSAPA spécialisé alcool d'Orsay",
+  "type": "CSAPA",
+  "ville": "Orsay",
+  "dept": "91",
+  "adresse": "Orsay (91400)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "CSAPA spécialisé dans l'accompagnement des addictions à l'alcool.",
+  "besoins": [
+   "alcool",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.699,
+  "lon": 2.187,
+  "id": "csapa-specialise-alcool-d-orsay-orsay",
+  "lieu": "Orsay"
+ },
+ {
+  "nom": "CSAPA généraliste Fleury Mérogis",
+  "type": "CSAPA",
+  "ville": "Sainte-Geneviève-des-Bois",
+  "dept": "91",
+  "adresse": "Sainte-Geneviève-des-Bois (91700)",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.645,
+  "lon": 2.317,
+  "id": "csapa-generaliste-fleury-merogis-sainte-genevieve-des-bois",
+  "lieu": "Sainte-Geneviève-des-Bois"
+ },
+ {
+  "nom": "CSAPA Le Chat",
+  "type": "CSAPA municipal",
+  "ville": "Saint-Denis",
+  "dept": "93",
+  "adresse": "6 rue du Cygne (CMS du Cygne), 93200 Saint-Denis",
+  "tel": "01 83 72 20 23",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accueil, orientation et soins pour les personnes en difficulté avec une conduite addictive, ouvert à l'entourage. Ateliers thérapeutiques et groupes de parole.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.936,
+  "lon": 2.357,
+  "id": "csapa-le-chat-saint-denis",
+  "lieu": "Saint-Denis"
+ },
+ {
+  "nom": "CSAPA Le Corbillon — Hôpital Delafontaine",
+  "type": "CSAPA hospitalier",
+  "ville": "Saint-Denis",
+  "dept": "93",
+  "adresse": "2 rue du Docteur Delafontaine, 93200 Saint-Denis",
+  "tel": "",
+  "site": "https://www.ch-stdenis.fr",
+  "mode": [
+   "ambulatoire",
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accompagnement des addictions aux opiacés, cocaïne et cannabis, traitements de substitution. Sevrages ambulatoires et hospitaliers en lien avec l'équipe de liaison de l'hôpital.",
+  "besoins": [
+   "drogues",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.936,
+  "lon": 2.357,
+  "id": "csapa-le-corbillon-hopital-delafontaine-saint-denis",
+  "lieu": "Saint-Denis"
+ },
+ {
+  "nom": "CSAPA — antenne de Stains",
+  "type": "CSAPA municipal",
+  "ville": "Stains",
+  "dept": "93",
+  "adresse": "27-33 boulevard Maxime-Gorki (CMS Colette Coulon), 93240 Stains",
+  "tel": "01 49 71 40 35",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Antenne de proximité du CSAPA de Saint-Denis, à quelques kilomètres d'Épinay-sur-Seine.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.957,
+  "lon": 2.384,
+  "id": "csapa-antenne-de-stains-stains",
+  "lieu": "Stains"
+ },
+ {
+  "nom": "CSAPA d'Aubervilliers",
+  "type": "CSAPA municipal",
+  "ville": "Aubervilliers",
+  "dept": "93",
+  "adresse": "5 rue du Docteur Pesqué (Centre Municipal de Santé), 93300 Aubervilliers",
+  "tel": "01 48 11 21 90",
+  "site": "https://www.aubervilliers.fr/Centre-de-soins-accompagnement-prevention-en-addictologie",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultations pour toutes addictions avec ou sans substance, consultation dédiée à l'entourage (individuel, couple, famille), consultation jeunes consommateurs dès 13 ans.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "ecrans",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": true,
+  "lat": 48.914,
+  "lon": 2.383,
+  "id": "csapa-d-aubervilliers-aubervilliers",
+  "lieu": "Aubervilliers"
+ },
+ {
+  "nom": "CSAPA PASS (Association CaPASSCité)",
+  "type": "CSAPA associatif",
+  "ville": "Montreuil",
+  "dept": "93",
+  "adresse": "15 avenue de la Résistance, 93100 Montreuil",
+  "tel": "",
+  "site": "https://www.doctolib.fr/centre-soins-accompagnement-prevention-addictologie/montreuil/centre-de-soin-d-accompagnement-et-de-prevention-en-addictologie-csapa-pass-association-capasscite",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins, d'accompagnement et de prévention en addictologie. Prise de rendez-vous en ligne possible.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.861,
+  "lon": 2.443,
+  "id": "csapa-pass-association-capasscite-montreuil",
+  "lieu": "Montreuil"
+ },
+ {
+  "nom": "CSAPA d'Argenteuil (Association Addictions France)",
+  "type": "CSAPA associatif",
+  "ville": "Argenteuil",
+  "dept": "95",
+  "adresse": "12 boulevard Maurice Berteaux, 95100 Argenteuil",
+  "tel": "01 30 76 30 13",
+  "site": "https://addictions-france.org/etablissements/csapa-argenteuil/",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Structure ambassadrice du programme « Moi(s) sans tabac ». À quelques minutes d'Épinay-sur-Seine, de l'autre côté de la Seine.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "tabac",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.947,
+  "lon": 2.247,
+  "id": "csapa-d-argenteuil-association-addictions-france-argenteuil",
+  "lieu": "Argenteuil"
+ },
+ {
+  "nom": "CSAPA AGATA — Gennevilliers",
+  "type": "CSAPA associatif",
+  "ville": "Gennevilliers",
+  "dept": "92",
+  "adresse": "34 rue Pierre Timbaud, 92230 Gennevilliers",
+  "tel": "",
+  "site": "https://www.agata-asso.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste. Contact conseillé par le site de l'association avant de vous déplacer.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.933,
+  "lon": 2.294,
+  "id": "csapa-agata-gennevilliers-gennevilliers",
+  "lieu": "Gennevilliers"
+ },
+ {
+  "nom": "CSAPA AGATA — Rueil-Malmaison",
+  "type": "CSAPA associatif",
+  "ville": "Rueil-Malmaison",
+  "dept": "92",
+  "adresse": "9 avenue Beauséjour, 92500 Rueil-Malmaison",
+  "tel": "",
+  "site": "https://www.agata-asso.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Antenne de l'association AGATA, qui couvre aussi Colombes, Asnières et Villeneuve-la-Garenne.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.877,
+  "lon": 2.189,
+  "id": "csapa-agata-rueil-malmaison-rueil-malmaison",
+  "lieu": "Rueil-Malmaison"
+ },
+ {
+  "nom": "CSAPA Nord 92 — Centre Victor Segalen",
+  "type": "CSAPA hospitalier",
+  "ville": "Villeneuve-la-Garenne",
+  "dept": "92",
+  "adresse": "75 avenue de Verdun, 92390 Villeneuve-la-Garenne",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie rattaché à l'Hôpital Nord 92.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.936,
+  "lon": 2.327,
+  "id": "csapa-nord-92-centre-victor-segalen-villeneuve-la-garenne",
+  "lieu": "Villeneuve-la-Garenne"
+ },
+ {
+  "nom": "CSAPA Le Carrousel — GHSIF",
+  "type": "CSAPA hospitalier",
+  "ville": "Melun",
+  "dept": "77",
+  "adresse": "7 place Praslin, 77000 Melun",
+  "tel": "01 81 74 28 40",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accueil des usagers de drogues, médicaments, addictions sans substance (jeux vidéo, jeux d'argent) et de leur entourage. Consultation jeunes consommateurs sur place.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "ecrans",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": true,
+  "lat": 48.54,
+  "lon": 2.66,
+  "id": "csapa-le-carrousel-ghsif-melun",
+  "lieu": "Melun"
+ },
+ {
+  "nom": "Unité d'addictologie — GHSIF Melun (ELSA)",
+  "type": "Hôpital",
+  "ville": "Melun",
+  "dept": "77",
+  "adresse": "270 avenue Marc Jacquet, 77000 Melun",
+  "tel": "01 81 74 17 17",
+  "site": "",
+  "mode": [
+   "hospitalisation",
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Équipe de liaison et de soins en addictologie de l'hôpital, en lien avec les sevrages hospitaliers.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.54,
+  "lon": 2.66,
+  "id": "unite-d-addictologie-ghsif-melun-elsa-melun",
+  "lieu": "Melun"
+ },
+ {
+  "nom": "CSAPA Hevea",
+  "type": "CSAPA hospitalier",
+  "ville": "Meaux",
+  "dept": "77",
+  "adresse": "6-8 rue Saint-Fiacre, 77100 Meaux",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins, d'accompagnement et de prévention en addictologie du Grand Hôpital de l'Est Francilien. Numéro à confirmer directement auprès de l'accueil de l'hôpital.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.96,
+  "lon": 2.878,
+  "id": "csapa-hevea-meaux",
+  "lieu": "Meaux"
+ },
+ {
+  "nom": "CSAPA de Provins",
+  "type": "CSAPA",
+  "ville": "Provins",
+  "dept": "77",
+  "adresse": "1 rue Saint-Thibault, 77160 Provins",
+  "tel": "01 60 52 07 73",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie pour l'est de la Seine-et-Marne.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.56,
+  "lon": 3.299,
+  "id": "csapa-de-provins-provins",
+  "lieu": "Provins"
+ },
+ {
+  "nom": "CSAPA de Cergy-Pontoise (Association Addictions France)",
+  "type": "CSAPA associatif",
+  "ville": "Cergy",
+  "dept": "95",
+  "adresse": "18 boulevard de la Paix, Immeuble Buroplus, 95800 Cergy",
+  "tel": "01 30 30 50 96",
+  "site": "https://addictions-france.org/etablissements/csapa-cergy-pontoise/",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultations sur rendez-vous, confidentielles et gratuites, pour les personnes concernées et leur entourage.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 49.036,
+  "lon": 2.076,
+  "id": "csapa-de-cergy-pontoise-association-addictions-france-cergy",
+  "lieu": "Cergy"
+ },
+ {
+  "nom": "CSAPA Oppelia Rivage",
+  "type": "CSAPA associatif",
+  "ville": "Sarcelles",
+  "dept": "95",
+  "adresse": "18 avenue du 8 mai 1945, 95200 Sarcelles",
+  "tel": "",
+  "site": "https://www.oppelia.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins, d'accompagnement et de prévention en addictologie du réseau Oppelia.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.997,
+  "lon": 2.38,
+  "id": "csapa-oppelia-rivage-sarcelles",
+  "lieu": "Sarcelles"
+ },
+ {
+  "nom": "Réseau PASS — CSAPA Garges-lès-Gonesse",
+  "type": "CSAPA",
+  "ville": "Garges-lès-Gonesse",
+  "dept": "95",
+  "adresse": "36-44 avenue Frédéric Joliot Curie, 95140 Garges-lès-Gonesse",
+  "tel": "",
+  "site": "https://rvh-synergie.org",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et d'insertion en addictologie, dessert l'est du Val-d'Oise.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.971,
+  "lon": 2.401,
+  "id": "reseau-pass-csapa-garges-les-gonesse-garges-les-gonesse",
+  "lieu": "Garges-lès-Gonesse"
+ },
+ {
+  "nom": "Hôpital de jour d'addictologie — Hôpital Simone Veil",
+  "type": "Hôpital",
+  "ville": "Eaubonne",
+  "dept": "95",
+  "adresse": "14 rue de Saint-Prix, 95600 Eaubonne",
+  "tel": "01 34 06 62 27",
+  "site": "https://www.hopital-simoneveil.fr/services/addictologie/",
+  "mode": [
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Prise en charge des troubles de l'usage d'alcool en hôpital de jour : sevrage, consolidation du sevrage, aide au maintien de l'abstinence, ateliers thérapeutiques.",
+  "besoins": [
+   "alcool"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.99,
+  "lon": 2.28,
+  "id": "hopital-de-jour-d-addictologie-hopital-simone-veil-eaubonne",
+  "lieu": "Eaubonne"
+ },
+ {
+  "nom": "CSAPA Imagine — Groupement Hospitalier Eaubonne-Montmorency",
+  "type": "CSAPA hospitalier",
+  "ville": "Ermont",
+  "dept": "95",
+  "adresse": "1 rue Saint-Flaive Prolongée, 95120 Ermont",
+  "tel": "01 39 89 17 49",
+  "site": "https://www.hopital-simoneveil.fr/services/centre-imagine/",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "CSAPA ambulatoire avec unité méthadone, à 5 minutes d'Eaubonne. Consultation jeunes consommateurs pour les moins de 25 ans, avec ou sans entourage.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": true,
+  "lat": 48.99,
+  "lon": 2.258,
+  "id": "csapa-imagine-groupement-hospitalier-eaubonne-montmorency-ermont",
+  "lieu": "Ermont"
+ },
+ {
+  "nom": "Service de psychiatrie-addictologie — Hôpital Louis-Mourier (AP-HP)",
+  "type": "Hôpital",
+  "ville": "Colombes",
+  "dept": "92",
+  "adresse": "178 rue des Renouillers, 92700 Colombes",
+  "tel": "01 47 60 65 30",
+  "site": "https://hopital-louis-mourier.aphp.fr/psychiatrie-addictologie-beaujon/",
+  "mode": [
+   "hospitalisation",
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Unité d'hospitalisation en addictologie (8 lits) et équipe de liaison (ELSA) qui accompagne aussi les patients hospitalisés dans les autres services de l'hôpital.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.923,
+  "lon": 2.254,
+  "id": "service-de-psychiatrie-addictologie-hopital-louis-mourier-ap-hp-colomb",
+  "lieu": "Colombes"
+ },
+ {
+  "nom": "UTAMA — Hôpital Beaujon (AP-HP)",
+  "type": "Hôpital",
+  "ville": "Clichy",
+  "dept": "92",
+  "adresse": "100 boulevard du Général Leclerc, 92110 Clichy",
+  "tel": "01 40 87 58 84",
+  "site": "https://www.aphp.fr/service/service-34-005",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Unité de Traitement Ambulatoire des Maladies Addictives. Secteur : Clichy, Asnières, Courbevoie, Puteaux, Paris 17e et 18e. Consultations sur rendez-vous, gratuites.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.904,
+  "lon": 2.306,
+  "id": "utama-hopital-beaujon-ap-hp-clichy",
+  "lieu": "Clichy"
+ },
+ {
+  "nom": "CSAPA — Hôpital Jean-Verdier (AP-HP)",
+  "type": "CSAPA hospitalier",
+  "ville": "Bondy",
+  "dept": "93",
+  "adresse": "Avenue du 14 Juillet, Hôpital Jean-Verdier, 93140 Bondy",
+  "tel": "01 48 95 59 33",
+  "site": "https://chu93.aphp.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultation jeunes consommateurs (13-25 ans) en lien avec la Maison des Adolescents Casita de l'hôpital Avicenne.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": true,
+  "lat": 48.902,
+  "lon": 2.49,
+  "id": "csapa-hopital-jean-verdier-ap-hp-bondy",
+  "lieu": "Bondy"
+ },
+ {
+  "nom": "Unité d'addictologie — Hôpital René-Muret (AP-HP)",
+  "type": "Hôpital",
+  "ville": "Sevran",
+  "dept": "93",
+  "adresse": "Avenue du Docteur Schaeffner, 93270 Sevran",
+  "tel": "01 41 52 56 74",
+  "site": "https://chu93.aphp.fr",
+  "mode": [
+   "ambulatoire",
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Depuis janvier 2026, filière spécialisée dans la prise en charge des usages détournés du protoxyde d'azote, en plus du suivi addictologique général.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.938,
+  "lon": 2.527,
+  "id": "unite-d-addictologie-hopital-rene-muret-ap-hp-sevran",
+  "lieu": "Sevran"
+ },
+ {
+  "nom": "Service d'addictologie — Hôpital Paul-Brousse (AP-HP)",
+  "type": "Hôpital",
+  "ville": "Villejuif",
+  "dept": "94",
+  "adresse": "Bâtiment Moreau-de-Tours, Hôpital Paul-Brousse, 94800 Villejuif",
+  "tel": "01 45 59 32 60",
+  "site": "",
+  "mode": [
+   "ambulatoire",
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Un des services de référence en addictologie en France (alcool, tabac, drogues), consultations et hospitalisations selon indication médicale.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "tabac"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.792,
+  "lon": 2.366,
+  "id": "service-d-addictologie-hopital-paul-brousse-ap-hp-villejuif",
+  "lieu": "Villejuif"
+ },
+ {
+  "nom": "CSAPA Regain — Hôpital Saint-Camille",
+  "type": "CSAPA hospitalier",
+  "ville": "Bry-sur-Marne",
+  "dept": "94",
+  "adresse": "Hôpital Saint-Camille, 94360 Bry-sur-Marne",
+  "tel": "01 49 83 10 01",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie pour l'est du Val-de-Marne.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.843,
+  "lon": 2.524,
+  "id": "csapa-regain-hopital-saint-camille-bry-sur-marne",
+  "lieu": "Bry-sur-Marne"
+ },
+ {
+  "nom": "CSAPA Verlaine / Littoral",
+  "type": "CSAPA",
+  "ville": "Villeneuve-Saint-Georges",
+  "dept": "94",
+  "adresse": "Villeneuve-Saint-Georges (94190)",
+  "tel": "01 43 82 58 38",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie pour le sud du Val-de-Marne.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.732,
+  "lon": 2.449,
+  "id": "csapa-verlaine-littoral-villeneuve-saint-georges",
+  "lieu": "Villeneuve-Saint-Georges"
+ },
+ {
+  "nom": "CSAPA UDSM Meltem 94 — Centre Thérapeutique Résidentiel",
+  "type": "CSAPA associatif",
+  "ville": "Champigny-sur-Marne",
+  "dept": "94",
+  "adresse": "17 avenue de l'Épargne, 94500 Champigny-sur-Marne",
+  "tel": "01 41 77 40 30",
+  "site": "https://www.udsm-asso.fr",
+  "mode": [
+   "ambulatoire",
+   "hospitalisation"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Dispose d'un Centre Thérapeutique Résidentiel ouvert 24h/24, 7j/7, en plus d'un accueil de jour et de la délivrance de traitements de substitution.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.817,
+  "lon": 2.516,
+  "id": "csapa-udsm-meltem-94-centre-therapeutique-residentiel-champigny-sur-ma",
+  "lieu": "Champigny-sur-Marne"
+ },
+ {
+  "nom": "CSAPA de Villejuif",
+  "type": "CSAPA",
+  "ville": "Villejuif",
+  "dept": "94",
+  "adresse": "9 rue Georges Bizet, 94800 Villejuif",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Centre de soins et de prévention en addictologie généraliste. Numéro à confirmer directement auprès du centre.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.792,
+  "lon": 2.366,
+  "id": "csapa-de-villejuif-villejuif",
+  "lieu": "Villejuif"
+ },
+ {
+  "nom": "CSAPA d'Ivry-sur-Seine",
+  "type": "CSAPA hospitalier",
+  "ville": "Ivry-sur-Seine",
+  "dept": "94",
+  "adresse": "64 avenue Georges Gosnat, 94200 Ivry-sur-Seine",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Établissement public départemental d'hospitalisation, centre de soins et de prévention en addictologie.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.812,
+  "lon": 2.384,
+  "id": "csapa-d-ivry-sur-seine-ivry-sur-seine",
+  "lieu": "Ivry-sur-Seine"
+ },
+ {
+  "nom": "CSAPA d'Aulnay-sous-Bois",
+  "type": "CSAPA municipal",
+  "ville": "Aulnay-sous-Bois",
+  "dept": "93",
+  "adresse": "2 rue du Limousin, 93600 Aulnay-sous-Bois",
+  "tel": "",
+  "site": "",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Consultations en tabacologie, soutien psychologique et social, bilans de santé. Numéro à confirmer directement auprès du centre.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "tabac",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.934,
+  "lon": 2.495,
+  "id": "csapa-d-aulnay-sous-bois-aulnay-sous-bois",
+  "lieu": "Aulnay-sous-Bois"
+ },
+ {
+  "nom": "Association Charonne (Oppelia)",
+  "type": "Association",
+  "ville": "Paris 13e",
+  "dept": "75",
+  "adresse": "Paris (75013)",
+  "tel": "",
+  "site": "https://www.oppelia.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Accompagnement social et sanitaire des personnes en difficulté avec leurs consommations.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "rdv"
+  ],
+  "jeune": false,
+  "lat": 48.832,
+  "lon": 2.356,
+  "id": "association-charonne-oppelia-paris-13e",
+  "lieu": "Paris 13e"
+ },
+ {
+  "nom": "Al-Anon / Alateen — Groupes familiaux",
+  "type": "Groupe d'entraide",
+  "ville": "Versailles (siège) + réunions dans toute l'Île-de-France",
+  "dept": "78",
+  "adresse": "24 rue du Maréchal Joffre, 78000 Versailles",
+  "tel": "09 69 39 40 20",
+  "site": "https://al-anon.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "proche"
+  ],
+  "desc": "Réunions gratuites, anonymes, sans inscription, pour toute personne affectée par la consommation d'alcool d'un proche.",
+  "besoins": [
+   "alcool",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": 48.805,
+  "lon": 2.13,
+  "id": "al-anon-alateen-groupes-familiaux-versailles",
+  "lieu": "Réunions en Île-de-France"
+ },
+ {
+  "nom": "Nar-Anon France — Groupes familiaux",
+  "type": "Groupe d'entraide",
+  "ville": "Réunions en Île-de-France",
+  "dept": "IDF",
+  "adresse": "",
+  "tel": "",
+  "site": "https://nar-anon.org/france/",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "proche"
+  ],
+  "desc": "Groupes d'entraide en 12 étapes pour les proches de personnes dépendantes aux drogues.",
+  "besoins": [
+   "drogues",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "nar-anon-france-groupes-familiaux-reunions-en-ile-de-france",
+  "lieu": "Réunions en Île-de-France"
+ },
+ {
+  "nom": "Drogues Info Service",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "0 800 23 13 13",
+  "site": "https://www.drogues-info-service.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Écoute, information et orientation, anonyme et gratuit, 8h–2h, 7j/7. Tchat disponible sur le site.",
+  "besoins": [
+   "drogues",
+   "medic",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "drogues-info-service-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ },
+ {
+  "nom": "Alcool Info Service",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "0 980 980 930",
+  "site": "https://www.alcool-info-service.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Écoute et orientation autour de l'alcool, gratuit et non surtaxé, 8h–2h, 7j/7.",
+  "besoins": [
+   "alcool",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "alcool-info-service-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ },
+ {
+  "nom": "Tabac Info Service",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "39 89",
+  "site": "https://www.tabac-info-service.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi"
+  ],
+  "desc": "Conseils de tabacologues pour l'arrêt du tabac, du lundi au samedi, 8h–20h.",
+  "besoins": [
+   "tabac"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "tabac-info-service-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ },
+ {
+  "nom": "Joueurs Info Service",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "09 74 75 13 13",
+  "site": "https://www.joueurs-info-service.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Écoute et orientation autour des jeux d'argent et de hasard, anonyme, 8h–2h, 7j/7.",
+  "besoins": [
+   "ecrans",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "joueurs-info-service-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ },
+ {
+  "nom": "Écoute Cannabis",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "0 980 980 940",
+  "site": "https://www.drogues-info-service.fr",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Ligne dédiée aux questions sur le cannabis, anonyme et gratuite, 8h–2h, 7j/7.",
+  "besoins": [
+   "drogues",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": false,
+  "lat": null,
+  "lon": null,
+  "id": "ecoute-cannabis-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ },
+ {
+  "nom": "Fil Santé Jeunes",
+  "type": "Ligne d'écoute nationale",
+  "ville": "Par téléphone, partout en IDF",
+  "dept": "National",
+  "adresse": "",
+  "tel": "0 800 235 236",
+  "site": "https://www.filsantejeunes.com",
+  "mode": [
+   "ambulatoire"
+  ],
+  "pub": [
+   "moi",
+   "proche"
+  ],
+  "desc": "Écoute généraliste pour les jeunes (santé, addictions, mal-être), anonyme et gratuite.",
+  "besoins": [
+   "alcool",
+   "drogues",
+   "tabac",
+   "proches"
+  ],
+  "rdv": [
+   "sans"
+  ],
+  "jeune": true,
+  "lat": null,
+  "lon": null,
+  "id": "fil-sante-jeunes-par-telephone-partout-en-idf",
+  "lieu": "Par téléphone, partout en France"
+ }
 ];
 
-/* ---------- RENDU ---------- */
-const grid = document.getElementById('resultsGrid');
-const countEl = document.getElementById('resultCount');
-const cityInput = document.getElementById('cityInput');
-const villesList = document.getElementById('villes');
-
-let state = { mode: 'tous', pub: [], ville: '' };
-
-// datalist des villes
-const villesUniques = [...new Set(structures.map(s => s.ville))].sort();
-villesUniques.forEach(v => {
-  const opt = document.createElement('option');
-  opt.value = v;
-  villesList.appendChild(opt);
-});
-
-function modeLabel(m){ return m === 'ambulatoire' ? 'À domicile / ambulatoire' : 'Hospitalisation'; }
-function pubLabel(p){ return p === 'moi' ? 'Pour moi' : 'Pour un proche'; }
-
-function matches(s){
-  const modeOk = state.mode === 'tous' || s.mode.includes(state.mode);
-  const pubOk = state.pub.length === 0 || state.pub.some(p => s.pub.includes(p));
-  const villeOk = state.ville.trim() === '' ||
-    (s.ville + ' ' + s.dept + ' ' + s.adresse).toLowerCase().includes(state.ville.trim().toLowerCase());
-  return modeOk && pubOk && villeOk;
+/* ---------- RECHERCHE ---------- */
+const $=id=>document.getElementById(id);
+const grid=$('resultsGrid'),head=$('resultsHead'),countEl=$('resultCount'),cityInput=$('cityInput');
+let state={aud:'moi',besoins:[],modes:[]};
+const norm=t=>(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const RDVL={sans:'Sans RDV',rdv:'Sur RDV'};
+const dist=(a,b,c,d)=>{const r=Math.PI/180,x=(c-a)*r,y=(d-b)*r,h=Math.sin(x/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin(y/2)**2;return 12742*Math.asin(Math.sqrt(h));};
+function ok(s){
+  return (state.aud==='jeune'?s.jeune:state.aud==='moi'?s.pub.includes('moi'):true)
+   &&(!state.besoins.length||state.besoins.some(x=>s.besoins.includes(x)))
+   &&(!state.modes.length||state.modes.some(x=>x==='hospi'?s.mode.includes('hospitalisation'):s.rdv.includes(x)));
 }
-
-function render(){
-  const filtered = structures.filter(matches);
-  countEl.textContent = filtered.length + (filtered.length > 1 ? ' résultats' : ' résultat');
-  grid.innerHTML = '';
-
-  if(filtered.length === 0){
-    grid.innerHTML = '<div class="no-results">Aucune structure ne correspond à ces critères pour l’instant. Essayez une ville voisine, ou contactez le 0 800 23 13 13 (Drogues Info Service) qui pourra vous orienter.</div>';
-    return;
+async function locate(q){
+  try{
+    const u='https://geo.api.gouv.fr/communes?'+(/^\d{5}$/.test(q)?'codePostal='+q:'nom='+encodeURIComponent(q)+'&boost=population')+'&fields=nom,centre&limit=1';
+    const j=await (await fetch(u)).json();
+    if(j[0]&&j[0].centre)return{lat:j[0].centre.coordinates[1],lon:j[0].centre.coordinates[0],nom:j[0].nom};
+  }catch(e){}
+  return null;
+}
+async function search(){
+  grid.innerHTML='<div class="no-results">Recherche en cours…</div>';head.style.display='none';
+  const q=cityInput.value.trim(),nq=norm(q),list=structures.filter(ok);
+  const far=list.filter(s=>s.lat==null),loc=list.filter(s=>s.lat!=null);
+  if(!q)return show(loc.concat(far),'Toutes les structures');
+  const dept=/^\d{2,3}$/.test(q);
+  const here=loc.filter(s=>dept?s.dept===q:norm(s.ville+' '+s.adresse).includes(nq));
+  const pt=dept?null:await locate(q);
+  if(pt)loc.forEach(s=>s.km=dist(pt.lat,pt.lon,s.lat,s.lon));
+  if(here.length){if(pt)here.sort((a,b)=>a.km-b.km);return show(here.concat(far),'Structures à '+(pt?pt.nom:q),false);}
+  if(pt){
+    const near=loc.sort((a,b)=>a.km-b.km).slice(0,6);
+    let t='Aucune structure à '+pt.nom+' : voici les plus proches';
+    if(near.length&&near[0].km>80)t='Nous ne couvrons pas encore la zone de '+pt.nom+' : les plus proches sont éloignées. Les lignes d’écoute ci-dessous répondent partout';
+    return show(near.concat(far),t,true);
   }
-
-  filtered.forEach(s => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    const badges = [
-      ...s.mode.map(m => `<span class="badge mode-${m === 'ambulatoire' ? 'ambu' : 'hosp'}">${modeLabel(m)}</span>`),
-      ...s.pub.map(p => `<span class="badge pub-${p === 'moi' ? 'moi' : 'proche'}">${pubLabel(p)}</span>`)
-    ].join('');
-
-    const gmapsQuery = encodeURIComponent(`${s.nom} ${s.adresse || s.ville}`);
-    const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${gmapsQuery}`;
-
-    card.innerHTML = `
-      <h3>${s.nom}</h3>
-      <div class="badges">${badges}</div>
-      ${s.adresse ? `<p class="addr">${s.adresse}</p>` : ''}
-      <p class="desc">${s.desc}</p>
-      <div class="meta-line">
-        ${s.tel ? `<a href="tel:${s.tel.replace(/\s/g,'')}">${s.tel}</a>` : ''}
-        ${s.site ? `<a href="${s.site}" target="_blank" rel="noopener">Site officiel</a>` : ''}
-        <a href="${gmapsUrl}" target="_blank" rel="noopener" style="color:var(--gold);">★ Avis Google Maps</a>
-      </div>
-      <p class="verified">Vérifié le 14/09/2026 — ${s.type}</p>
-    `;
-    grid.appendChild(card);
+  show(far,'Nous n’avons pas reconnu « '+q+' ». Voici les lignes d’écoute et groupes qui répondent partout',false);
+}
+function show(list,title,showKm){
+  $('resultsTitle').textContent=title;head.style.display='flex';
+  countEl.textContent=list.length+(list.length>1?' résultats':' résultat');
+  grid.innerHTML='';
+  if(!list.length){grid.innerHTML='<div class="no-results">Aucune structure ne correspond à ces critères. Essayez d’en retirer un, ou appelez Drogues Info Service au 0 800 23 13 13 (gratuit, anonyme).</div>';return;}
+  list.forEach(s=>{
+    const badges=[...s.rdv.map(r=>`<span class="badge mode-ambu">${RDVL[r]}</span>`),
+      ...(s.mode.includes('hospitalisation')?['<span class="badge mode-hosp">Hospitalisation</span>']:[]),
+      ...(s.jeune?['<span class="badge pub-moi">Jeunes 12-25 ans</span>']:[])].join('');
+    const c=document.createElement('article');c.className='card';
+    c.innerHTML=`<h3>${s.nom}</h3><div class="badges"><span class="badge pub-city">${s.lieu}</span>${badges}</div>${showKm&&s.km!=null?`<p class="dist">À environ ${Math.round(s.km)} km</p>`:''}<p class="desc">${s.desc}</p><a class="btn" href="structure/${s.id}.html">Voir la fiche : adresse, téléphone, avis</a>`;
+    grid.appendChild(c);
   });
 }
-
-document.getElementById('modeFilters').addEventListener('click', e => {
-  const btn = e.target.closest('.chip');
-  if(!btn) return;
-  state.mode = btn.dataset.mode;
-  [...btn.parentElement.children].forEach(c => c.setAttribute('aria-pressed', c === btn));
-  render();
-});
-
-document.getElementById('publicFilters').addEventListener('click', e => {
-  const btn = e.target.closest('.chip');
-  if(!btn) return;
-  const key = btn.dataset.public;
-  const pressed = btn.getAttribute('aria-pressed') === 'true';
-  btn.setAttribute('aria-pressed', String(!pressed));
-  state.pub = [...btn.parentElement.querySelectorAll('.chip[aria-pressed="true"]')].map(c => c.dataset.public);
-  render();
-});
-
-cityInput.addEventListener('input', e => {
-  state.ville = e.target.value;
-  render();
-});
-
-document.getElementById('resetBtn').addEventListener('click', () => {
-  state = { mode: 'tous', pub: [], ville: '' };
-  cityInput.value = '';
-  document.querySelectorAll('#modeFilters .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.mode === 'tous'));
-  document.querySelectorAll('#publicFilters .chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
-  render();
-});
-
-render();
+$('audFilters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;state.aud=b.dataset.v;[...b.parentElement.children].forEach(c=>c.setAttribute('aria-pressed',c===b));});
+[['besoinFilters','besoins'],['modeFilters','modes']].forEach(([id,k])=>$(id).addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+  b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');state[k]=[...$(id).querySelectorAll('[aria-pressed="true"]')].map(c=>c.dataset.v);}));
+$('searchBtn').addEventListener('click',search);
+if(location.hash==='#connexion')$('loginBtn').click();
+cityInput.addEventListener('keydown',e=>{if(e.key==='Enter')search();});
+$('resetBtn').addEventListener('click',()=>{state={aud:'moi',besoins:[],modes:[]};cityInput.value='';
+  document.querySelectorAll('#audFilters .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.v==='moi'));
+  document.querySelectorAll('#besoinFilters .chip,#modeFilters .chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+  head.style.display='none';grid.innerHTML='';});
 </script>
 </body>
 </html>
